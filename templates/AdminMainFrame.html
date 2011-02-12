@@ -1,0 +1,16 @@
+<!-- Admin main -->
+
+<html>
+<body>
+<ul>
+	<li>Rekrutowani</li>
+	<li>Testy</li>
+</ul>
+
+<tal:block tal:condition="true:messages" metal:use-macro="MainMacros.html/Messages" />
+
+<!--${php:var_dump(this)}-->
+<tal:block tal:condition="exists:action" metal:use-macro="${action}" />
+
+</body>
+</html>
