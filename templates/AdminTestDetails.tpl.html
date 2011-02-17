@@ -1,0 +1,46 @@
+<!-- Admin Test Details -->
+<!-- <a href="${link:this,'edit',['id' => test.id]}">Edytuj</a> -->
+
+<tal:block metal:define-macro="AdminTestDetails">
+<h1>${params/Test/name}</h1>
+<div>
+	<ul>
+		<li>Duration: ${params/Test/duration}</li>
+		<li>Max points: ${params/TestMaxPoints}</li>
+	</ul>
+	<p>${params/Test/description}</p>
+</div>
+
+<div id="QuestionList">
+	<h2>Lista pytan</h2>
+	<ul>
+		<li tal:repeat="question params/Test/getQuestionsList " id="Question${question/id}">
+			<strong class="QuestionName">${question/text}</strong>
+			<div class="QuestionDescription">${question/answers}</div>
+		</li>
+	</ul>
+</div>
+
+
+<form method="post" action="${link:this, 'modifyQuestion'}">
+<input type="hidden" name="TestQuestionId" value="${params/QuestionForm/id|nothing}" />
+<input type="hidden" name="TestId" value="${params/Test/testId|nothing}" />
+
+typ: <select name="TestQuestionType">
+		<option value="php">php</option>
+		<option value="sql">sql</option>
+		<option value="closed">closed</option>
+		<option value="open">open</option>
+	</select>
+<br/>
+pytanie: 		<textarea name="TestQuestionText">${params/QuestionForm/text|nothing}</textarea><br/>
+odpowiedzi: 	<textarea name="TestQuestionAnswers">${params/QuestionForm/answers|nothing}</textarea><br/>
+punkty: 		<input type="hidden" name="TestQuestionPoints" value="${params/QuestionForm/points|nothing}" />
+odblokowany: 	<input type="radio" name="TestQuestionEnabled" value="Y" />tak
+				<input type="radio" name="TestQuestionEnabled" value="N" />nie
+<br/>
+<input type="submit"/>
+</form>
+
+
+</tal:block>

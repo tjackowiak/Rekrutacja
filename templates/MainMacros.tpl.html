@@ -1,0 +1,25 @@
+<!-- Message block -->
+<tal:block metal:define-macro="Messages">
+
+<div class="MessageInfo" tal:condition="true:messages/info" tal:repeat="message messages/info"
+style="border:1px solid #0f0;
+background-color:#bfb;
+padding:5px">
+<strong>${message}</strong>
+</div>
+
+<div class="MessageWarning" tal:condition="true:messages/warning" tal:repeat="message messages/warning"
+style="border:1px solid #ff0;
+background-color:#ffb;
+padding:5px">
+<strong>${message}</strong>
+</div>
+
+<div class="MessageError" tal:condition="true:messages/error" tal:repeat="message messages/error"
+style="border:1px solid #f00;
+background-color:#fbb;
+padding:5px">
+<strong>${message}</strong>
+</div>
+
+</tal:block>

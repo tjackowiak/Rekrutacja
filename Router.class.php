@@ -31,7 +31,7 @@ class Router
 
 		if( !empty($this->_path) )
 		{
-			list(,$controller,$action) = explode( '/', $this->_path );
+			@list(,$controller,$action) = explode( '/', $this->_path );
 			if( !empty($controller) )
 			{
 				$return = array(

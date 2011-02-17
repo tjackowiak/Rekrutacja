@@ -1,99 +1,73 @@
 <?php
 
-class Test
+class Test extends DBObject
 {
-	protected $__id;
-	protected $__name;
-	protected $__duration;
-	protected $__description;
+	protected $_name;
+	protected $_duration;
+	protected $_description;
+	protected $_questionsList = array();
 
 	protected $config = array(
 		'nameMaxLength'   => 50,
 		'timeMaxDuration' => 120,
 	);
 
-	public function __construct( $id = false )
+	protected function fetchData()
 	{
-		$this->db = DB::getInstance();
-
-		$id = intval($id);
-
-		if( !empty($id) )
-		{
-			$res = $this->db->query('select * from Tests where TestId = '.$id);
-			$row = $res->fetch_assoc();
-			$this->__id          = $row['TestId'];
-			$this->__name        = $row['TestName'];
-			$this->__duration    = $row['TestDuration'];
-			$this->__description = $row['TestDescription'];
-		}
+		$res = $this->_dbh->query('select * from Tests where TestId = '.$this->_id);
+		$row = $res->fetch_assoc();
+		$this->_id          = $row['TestId'];
+		$this->_name        = $row['TestName'];
+		$this->_duration    = $row['TestDuration'];
+		$this->_description = $row['TestDescription'];
 	}
 
-	public function __get( $name )
+	protected function validateName()
 	{
-		if( property_exists($this, '__'.$name ))
-		{
-			return $this->{'__'.$name};
-		}
-		else
-		{
-			return false;
-		}
+		if( empty($this->_name) )
+			throw new DBObjectException('name', 'Nazwa nie może być pusta');
+		if( mb_strlen($this->_name) > $this->config['nameMaxLength'] )
+			throw new DBObjectException('name', 'Nazwa jest za długa');
 	}
 
-	public function setName( $name )
+	protected function validateDuration()
 	{
-		if( !empty($name) && mb_strlen($name) < $this->config['nameMaxLength'] )
-		{
-			$this->__name = $name;
-		}
-		else
-		{
-			throw new Exception('['.__CLASS__.'] Niepoprawna nazwa testu');
-		}
+		$duration = intval($this->_duration);
+		if( $duration < 1 || $duration > $this->config['timeMaxDuration'] )
+			throw new DBObjectException('duration', 'Błędny czas trwania');
+		$this->_duration = $duration;
 	}
 
-	public function setDuration( $duration )
+	public function getQuestionsList()
 	{
-		$duration = intval($duration);
-		if( $duration > 0 && $duration < $this->config['timeMaxDuration'] )
+		if( empty($this->_questionsList) )
 		{
-			$this->__duration = $duration;
+			$result = $this->_dbh->query('select TestQuestionId from TestQuestions where TestId = '.$this->_id);
+			while($row = $result->fetch_assoc())
+			{
+				$this->_questionsList[$row['TestQuestionId']] = new TestQuestion($row['TestQuestionId']);
+			}
 		}
-		else
-		{
-			throw new Exception('['.__CLASS__.'] Niepoprawny czas trwania testu');
-		}
+		return $this->_questionsList;
 	}
 
-	public function setDescription( $description )
+	public function create()
 	{
-		$this->__description = $description;
+		$res = $this->_dbh->query('insert into Tests
+			(TestName, TestDuration, TestDescription)
+			values ("'.$this->_name.'",
+			'.$this->_duration.',
+			"'.$this->_description.'")');
+		$this->_id = $this->_dbh->getInsertId();
+		return $this->_id;
 	}
 
-	public function save()
+	public function update()
 	{
-		if( !empty($this->__id) )
-		{
-			$res = $this->db->query('update Tests set
-				TestName = "'. $this->__name .'",
-				TestDuration = "'. $this->__duration .'",
-				TestDescription = "'. $this->__description .'"
-				where TestId = '. $this->__id);
-		}
-		else
-		{
-			$res = $this->db->query('insert into Tests
-				(TestName, TestDuration, TestDescription)
-				values ("'.$this->__name.'",'.$this->__duration.',"'.$this->__description.'")');
-			$this->__id = $this->db->insert_id;
-		}
-
-		if( $res === false )
-		{
-			throw new Exception('['.__CLASS__.'] Błąd aktualizacji bazy (<i>'.$this->db->error.'</i>)');
-		}
-
+		return $this->_dbh->query('update Tests set
+			TestName = "'. $this->_name .'",
+			TestDuration = "'. $this->_duration .'",
+			TestDescription = "'. $this->_description .'"
+			where TestId = '. $this->_id);
 	}
-
 }

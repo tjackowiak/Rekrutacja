@@ -1,0 +1,23 @@
+<!-- Admin main -->
+
+<html>
+<body>
+<ul>
+	<li>Rekrutowani</li>
+	<li><a href="${link:'TestConfig'}">Testy</a></li>
+</ul>
+
+<tal:block tal:condition="true:messages" metal:use-macro="MainMacros.html/Messages" />
+
+<!-- ${php:var_dump(blocks)} -->
+<!-- Block: Main -->
+<tal:block tal:condition="php:isset(blocks['main'])"
+tal:define="
+this blocks/main/controller;
+params blocks/main/parameters"
+metal:use-macro="${blocks/main/template}" />
+<!-- /Block: Main -->
+
+
+</body>
+</html>

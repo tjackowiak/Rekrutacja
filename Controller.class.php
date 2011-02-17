@@ -2,33 +2,48 @@
 
 abstract class Controller
 {
-	protected $__tpl = NULL;
-	protected $__get = NULL;
-	protected $__post = NULL;
+	const ACCESS_PUBLIC = 1;
+	const ACCESS_ADMIN  = 2;
 
-	protected $__siteAction;
+	protected $_accessPrivileges = self::ACCESS_PUBLIC; #or 'admin' to restricted access
+	protected $_action = false;
 
-	public function __construct( $tpl, $get = false, $post = false )
+	// protected $_tpl  = NULL;
+	protected $_get  = NULL;
+	protected $_post = NULL;
+
+
+	public function __construct( $get = false, $post = false )
 	{
-		$this->__tpl = $tpl;
-		$this->__tpl->setController($this);
+		// $tpl->setController($this);
+		// $this->_tpl = $tpl;
+
 		if( !empty($get) )
 		{
-			$this->__get = $get;
+			$this->_get = $get;
 		}
 		if( !empty($post) )
 		{
-			$this->__post = $post;
+			$this->_post = $post;
 		}
 	}
 
 	public function getAction()
 	{
-		return $this->__siteAction;
+		return $this->_action;
 	}
 	protected function setAction( $action )
 	{
-		$this->__siteAction = $action;
+		$this->_action = $action;
+	}
+
+	public function getType()
+	{
+		return $this->_type;
+	}
+	public function getAccess()
+	{
+		return $this->_accessPrivileges;
 	}
 
 	abstract public function run();

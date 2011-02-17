@@ -5,22 +5,46 @@ class DB
 	/**
 	 * Config
 	 */
-	private static $host = 'localhost';
-	private static $db = 'rekrutacja';
-	private static $user = 'rekrutacja';
-	private static $pass = 'rekrutacja';
-	private static $conn = NULL;
+	private static $instance = NULL;
+	private $host = 'localhost';
+	private $db   = 'rekrutacja';
+	private $user = 'rekrutacja';
+	private $pass = 'rekrutacja';
+	private $dbh  = NULL;
 
 	public static function getInstance()
 	{
-		if(NULL === self::$conn)
+		if(NULL === self::$instance)
 		{
-			self::$conn = new mysqli(self::$host, self::$user, self::$pass, self::$db);
-			if (self::$conn->connect_error) {
-				die('Connect Error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
-			}	
+			self::$instance = new DB();
 		}
 
-		return self::$conn;
+		return self::$instance;
 	}
+
+	public function __construct()
+	{
+		$this->dbh = new mysqli($this->host, $this->user, $this->pass, $this->db);
+		if( $this->dbh->connect_error )
+		{
+			die('Connect Error (' . $this->dbh->connect_errno . ') ' . $this->dbh->connect_error);
+		}		
+	}
+
+	public function query( $query )
+	{
+		// var_dump('[DB Query] '.$query);
+		return $this->dbh->query($query);
+	}
+
+	public function getLastError()
+	{
+		return $this->dbh->error;
+	}
+
+	public function getInsertId()
+	{
+		return $this->dbh->insert_id;
+	}
+	
 }

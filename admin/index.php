@@ -1,32 +1,84 @@
 <?php
 session_start();
 require '../config.php';
-var_dump($_SERVER);
-$controller_name = 'TestsListController';
-$controller_action = false;
-if( !empty($_SERVER['PATH_INFO']) )
+// var_dump($_SERVER);
+// var_dump(Router::getRoute('test', 'action', array('id'=>123)));
+
+class AdminController extends Controller
 {
-	list(,$controller_name_tmp,$controller_action_tmp) = explode( '/', $_SERVER['PATH_INFO'] );
-	var_dump($controller_action_tmp);
-	$controller_name_tmp .= 'Controller';
-	if( class_exists($controller_name_tmp) && is_subclass_of($controller_name_tmp, 'Controller') )
+	private $_tpl;
+
+	public function run()
 	{
-		$controller_name = $controller_name_tmp;
-		unset($controller_name_tmp);
+		$this->_tpl        = new Template('AdminMainFrame');
+		$router            = new Router($_SERVER);
+		$defaultController = 'TestsConfigController';
+		
+
+		$routeTo = $router->determineRoute();
+		// var_dump($routeTo);
+		if( $routeTo !== false 
+			&& class_exists($routeTo['controller'])
+			&& is_subclass_of($routeTo['controller'], 'Controller') )
+		{
+			$controllerName = $routeTo['controller'];
+		}
+		else
+		{
+			$controllerName = $defaultController;
+		}
+
+		try
+		{
+			$controller = new $controllerName($this->_get, $this->_post);
+			$controller->setAction($routeTo['action']);
+			$this->fillBlock('main', $controller);
+			
+			echo $this->_tpl->execute();
+		}
+		catch(Exception $e)
+		{
+			var_dump($e);
+		}
+	}
+
+	private function fillBlock( $blockName, Controller $controller )
+	{
+		$data = array
+		(
+			'controller' => false,
+			'template'   => false,
+			'parameters' => false,
+		);
+
+		$blockData = $controller->run();
+		// var_dump($blockData);
+		if( !empty($blockData['template']) )
+		{
+			$data['controller'] = $controller;
+			$data['template']   = Template::getBlockName($blockData['template']);
+
+			//TODO: implement better messages
+			if( !empty($blockData['messeges']['info']) )
+				foreach($blockData['messeges']['info'] as $msg)
+					$this->_tpl->addMessageInfo($msg);
+			if( !empty($blockData['messeges']['warn']) )
+				foreach($blockData['messeges']['warn'] as $msg)
+					$this->_tpl->addMessageWarning($msg);
+			if( !empty($blockData['messeges']['error']) )
+				foreach($blockData['messeges']['error'] as $msg)
+					$this->_tpl->addMessageError($msg);
+			
+			if( !empty($blockData['parameters']) )
+			{
+				$data['parameters'] = $blockData['parameters'];
+			}
+		}
+		$this->_tpl->blocks[$blockName] = $data;
 	}
 }
 
+$controller = new AdminController($_GET, $_POST);
+$controller->run();
 
-$tpl = new Template('AdminMainFrame');
-$controller = new $controller_name($tpl, $_GET, $_POST);
-$tpl = $controller->run();
-
-try
-{
-	echo $tpl->execute();
-}
-catch(Exception $e)
-{
-     echo $e;
-}
-
+var_dump($controller->getAccess());

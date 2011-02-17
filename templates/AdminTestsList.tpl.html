@@ -1,0 +1,36 @@
+<!-- Admin tests list -->
+<tal:block metal:define-macro="AdminTestsList">
+
+<div id="AdminTestsList" phptal:debug="">
+<h1>Lista testow</h1>
+
+<div tal:condition="not:true:this/getTestsList">
+	<strong>Nie znaleziono testow</strong>
+</div>
+<ul tal:condition="true:this/getTestsList">
+	<li tal:repeat="test this/getTestsList">
+		<a href="${link:this,'show',['id'=>test.id]}">${test/name}</a> (${test/duration})
+		<i tal:condition="exists:test/description">${test/description}</i>
+		<a href="${link:this,'edit',['id'=>test.id]}">Edytuj</a>
+	</li>
+</ul>
+
+
+<h2>Nowy test:</h2>
+
+<!-- ERROR - Bład wypełniania formularza -->
+<span tal:condition="exists:params/TestDataError"
+style="border:1px solid red;background-color:#fbb">
+<strong>! ${params/TestDataError/field}</strong> - ${params/TestDataError/error}
+</span>
+
+<form method="post" action="${link:this, 'modify'}">
+<input type="hidden" name="TestId" tal:condition="true:params/TestData/id" value="${params/TestData/id}"/>
+nazwa: <input type="text" name="TestName" value="${params/TestData/name|nothing}"/><br/>
+czas trwania: <input type="text" name="TestDuration" value="${params/TestData/duration|nothing}"/><br/>
+opis: <textarea name="TestDescription">${params/TestData/description|nothing}</textarea><br/>
+<input type="submit"/>
+</form>
+</div>
+
+</tal:block>
