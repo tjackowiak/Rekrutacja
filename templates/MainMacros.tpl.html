@@ -1,25 +1,51 @@
 <!-- Message block -->
 <tal:block metal:define-macro="Messages">
 
-<div class="MessageInfo" tal:condition="true:messages/info" tal:repeat="message messages/info"
-style="border:1px solid #0f0;
-background-color:#bfb;
-padding:5px">
+<div class="message_ok" tal:condition="true:messages/info" tal:repeat="message messages/info">
 <strong>${message}</strong>
 </div>
 
-<div class="MessageWarning" tal:condition="true:messages/warning" tal:repeat="message messages/warning"
-style="border:1px solid #ff0;
-background-color:#ffb;
-padding:5px">
+<div class="message_warning" tal:condition="true:messages/warning" tal:repeat="message messages/warning">
 <strong>${message}</strong>
 </div>
 
-<div class="MessageError" tal:condition="true:messages/error" tal:repeat="message messages/error"
-style="border:1px solid #f00;
-background-color:#fbb;
-padding:5px">
+<div class="message_error" tal:condition="true:messages/error" tal:repeat="message messages/error">
 <strong>${message}</strong>
 </div>
 
+</tal:block>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tal:block metal:define-macro="PostDefault">
+<div class="contentboxwraper dropshadow roundedMedium">
+	<div class="contentbox roundedSmall">
+		<div class="title">
+			<h2><a href="/" rel="bookmark" title="Link">Tytul posta w h2</a></h2>
+			<div class="titlemeta">
+				<span class="author"> Posted by jinson </span> <span class="clock"> January - 31 - 2011 </span> <span class="comm"> <a href="/" title="Comment">0 Comment</a> </span> 
+			</div> <!-- titlemeta -->
+		</div> <!-- title -->
+		<div class="entry">
+		<a href="/"><img class="postimg" src="/rekrutacja/images/post_img_thumb.jpg" alt="" /></a>
+		<p>Nunc ornare dui at metus mattis pulvinar. Nullam tincidunt justo nec libero malesuada eget dapibus lorem facilisis. Nam eu metus auctor augue ornare faucibus. Fusce egestas dui eu est mattis aliquam ornare ipsum malesuada. Morbi pretium quam quis lacus eleifend ultricies. Donec fermentum, massa ut molestie gravida, ipsum metus pretium eros, sodales condimentum dui risus at lectus. Suspendisse potenti. Fusce congue est nec ante eleifend dictum. Praesent in felis at<a href="/">&nbsp;&nbsp;[ Read More ]</a></p>
+		<div class="clear"></div>
+		</div> <!-- entry -->
+
+		<div class="morer"><a href="/"> Read Full</a></div>
+		<div class="clear"></div>
+	</div> <!-- postincase -->
+</div> <!-- post -->
 </tal:block>

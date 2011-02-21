@@ -2,34 +2,10 @@
 	"buffers":
 	[
 		{
-			"file": "/P/htdocs/rekrutacja/DB.class.php",
-			"settings":
-			{
-				"buffer_size": 860,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "/P/htdocs/rekrutacja/admin/index.php",
 			"settings":
 			{
-				"buffer_size": 2049,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/P/htdocs/rekrutacja/Test.class.php",
-			"settings":
-			{
-				"buffer_size": 1588,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/P/htdocs/rekrutacja/DBObject.class.php",
-			"settings":
-			{
-				"buffer_size": 1454,
+				"buffer_size": 2083,
 				"line_ending": "Unix"
 			}
 		},
@@ -37,71 +13,111 @@
 			"file": "/P/htdocs/rekrutacja/config.php",
 			"settings":
 			{
-				"buffer_size": 358,
+				"buffer_size": 1635,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/P/htdocs/rekrutacja/templates/AdminTestsList.html",
+			"file": "/P/htdocs/rekrutacja/dal/TestDal.class.php",
 			"settings":
 			{
-				"buffer_size": 1254,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/P/htdocs/rekrutacja/templates/AdminMainFrame.html",
-			"settings":
-			{
-				"buffer_size": 427,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/P/htdocs/rekrutacja/TestsList.class.php",
-			"settings":
-			{
-				"buffer_size": 462,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/P/htdocs/rekrutacja/templates/MainMacros.html",
-			"settings":
-			{
-				"buffer_size": 684,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/P/htdocs/rekrutacja/Router.class.php",
-			"settings":
-			{
-				"buffer_size": 1472,
+				"buffer_size": 1969,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/P/htdocs/rekrutacja/Controller.class.php",
+			"file": "/P/htdocs/rekrutacja/dal/TestQuestionDal.class.php",
 			"settings":
 			{
-				"buffer_size": 817,
+				"buffer_size": 1561,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/P/htdocs/rekrutacja/TestsListController.class.php",
+			"file": "/P/htdocs/rekrutacja/core/DB.class.php",
 			"settings":
 			{
-				"buffer_size": 1986,
+				"buffer_size": 848,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/P/htdocs/rekrutacja/Template.class.php",
+			"file": "/P/htdocs/rekrutacja/core/DBObject.class.php",
 			"settings":
 			{
-				"buffer_size": 2338,
+				"buffer_size": 1454,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/P/htdocs/rekrutacja/core/Template.class.php",
+			"settings":
+			{
+				"buffer_size": 3518,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/P/htdocs/rekrutacja/controller/TestsConfigController.class.php",
+			"settings":
+			{
+				"buffer_size": 3251,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/P/htdocs/rekrutacja/module/TestsListModule.class.php",
+			"settings":
+			{
+				"buffer_size": 543,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/P/htdocs/rekrutacja/module/TestModule.class.php",
+			"settings":
+			{
+				"buffer_size": 1375,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/P/htdocs/rekrutacja/style.css",
+			"settings":
+			{
+				"buffer_size": 8213,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/P/htdocs/rekrutacja/style_orig.css",
+			"settings":
+			{
+				"buffer_size": 12147,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/P/htdocs/rekrutacja/templates/AdminMainFrame.tpl.html",
+			"settings":
+			{
+				"buffer_size": 2016,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/P/htdocs/rekrutacja/templates/AdminTestsList.tpl.html",
+			"settings":
+			{
+				"buffer_size": 3138,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/P/htdocs/rekrutacja/templates/AdminTestDetails.tpl.html",
+			"settings":
+			{
+				"buffer_size": 3368,
 				"line_ending": "Unix"
 			}
 		}
@@ -109,11 +125,35 @@
 	"build_system": "",
 	"file_history":
 	[
-		"/C/Documents and Settings/kef/Moje dokumenty/Downloads/ZenCoding.sublime-package",
-		"/P/htdocs/rekrutacja/TestsListController.class.php",
+		"/P/htdocs/rekrutacja/templates/MainMacros.tpl.html",
+		"/P/htdocs/rekrutacja/templates/AdminTestDetails.tpl.html",
+		"/P/htdocs/rekrutacja/templates/AdminTestsList.tpl.html",
+		"/P/htdocs/rekrutacja/templates/AdminMainFrame.tpl.html",
+		"/P/htdocs/rekrutacja/Template.class.php",
+		"/P/htdocs/rekrutacja/DB.class.php",
+		"/P/htdocs/rekrutacja/Test.class.php",
+		"/P/htdocs/rekrutacja/TestQuestion.class.php",
+		"/P/htdocs/rekrutacja/DBObject.class.php",
+		"/P/htdocs/rekrutacja/templates/MainMacros.html",
+		"/P/htdocs/rekrutacja/TestsList.class.php",
 		"/P/htdocs/rekrutacja/Router.class.php",
-		"/P/common/Sublime2/Data/Packages/Default/Global.sublime-settings",
+		"/P/htdocs/rekrutacja/Controller.class.php",
+		"/P/htdocs/rekrutacja/TestsConfigController.class.php",
+		"/P/htdocs/rekrutacja/footer_test.html",
+		"/P/htdocs/templates/Womack/style.css",
+		"/P/htdocs/templates/Womack/slider.css",
+		"/C/Documents and Settings/kef/Ustawienia lokalne/Temp/ARC11F/com/nickgravgaard/elastictabstops/ElasticTabstopsDocFilter.java",
+		"/C/Documents and Settings/kef/Ustawienia lokalne/Temp/ARC11E/com/nickgravgaard/elastictabstops/ETLine.java",
+		"/C/Documents and Settings/kef/Ustawienia lokalne/Temp/ARC11C/com/nickgravgaard/elastictabstops/ETTabstop.java",
 		"/P/common/Sublime2/Data/Packages/Default/Base File.sublime-settings",
+		"/P/common/Sublime2/Data/Packages/Default/Global.sublime-settings",
+		"/P/common/Sublime2/Data/Packages/User/Global.sublime-settings",
+		"/P/common/Sublime2/Data/Packages/User/Base File.sublime-settings",
+		"/P/htdocs/rekrutacja/templates/AdminTestsList.html",
+		"/P/htdocs/rekrutacja/templates/AdminMainFrame.html",
+		"/P/htdocs/rekrutacja/admin/index.php",
+		"/P/htdocs/rekrutacja/TestsListController.class.php",
+		"/C/Documents and Settings/kef/Moje dokumenty/Downloads/ZenCoding.sublime-package",
 		"/P/htdocs/rekrutacja/index.php",
 		"/P/htdocs/rekrutacja/old/AdminCheck.php"
 	],
@@ -131,15 +171,42 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"hide",
+			"comment",
+			"sub-menu",
+			"catmenu",
+			"blogname",
+			"masthead",
+			"widget_meta",
+			"post",
+			"menu-item",
+			"menu-item-type-custom",
+			"images",
+			"/rekrutacja",
+			"images/",
+			"	",
+			"$action",
+			"action",
+			"$return",
+			"return",
+			"Return",
+			"return",
+			"Return",
+			"return",
+			"Return",
+			"return",
+			"determineRoute",
 			"argv",
 			"__"
 		],
 		"highlight": true,
-		"in_selection": true,
+		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
 		[
+			"menu",
+			"pagename",
 			"params",
 			"_"
 		],
@@ -159,50 +226,23 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/P/htdocs/rekrutacja/DB.class.php",
-					"settings":
-					{
-						"buffer_size": 860,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								680,
-								680
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0,
-						"translation.y": 0,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "/P/htdocs/rekrutacja/admin/index.php",
 					"settings":
 					{
-						"buffer_size": 2049,
+						"buffer_size": 2083,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								48,
-								48
+								70,
+								70
 							]
 						],
 						"settings":
@@ -217,19 +257,45 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/P/htdocs/rekrutacja/Test.class.php",
+					"buffer": 1,
+					"file": "/P/htdocs/rekrutacja/config.php",
 					"settings":
 					{
-						"buffer_size": 1588,
+						"buffer_size": 1635,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7,
-								7
+								1164,
+								1164
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0,
+						"translation.y": 240,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/P/htdocs/rekrutacja/dal/TestDal.class.php",
+					"settings":
+					{
+						"buffer_size": 1969,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								348,
+								348
 							]
 						],
 						"settings":
@@ -245,23 +311,23 @@
 				},
 				{
 					"buffer": 3,
-					"file": "/P/htdocs/rekrutacja/DBObject.class.php",
+					"file": "/P/htdocs/rekrutacja/dal/TestQuestionDal.class.php",
 					"settings":
 					{
-						"buffer_size": 1454,
+						"buffer_size": 1561,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								276,
-								276
+								876,
+								876
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0,
@@ -272,96 +338,18 @@
 				},
 				{
 					"buffer": 4,
-					"file": "/P/htdocs/rekrutacja/config.php",
+					"file": "/P/htdocs/rekrutacja/core/DB.class.php",
 					"settings":
 					{
-						"buffer_size": 358,
+						"buffer_size": 848,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								51,
-								51
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0,
-						"translation.y": 0,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/P/htdocs/rekrutacja/templates/AdminTestsList.html",
-					"settings":
-					{
-						"buffer_size": 1254,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								796,
-								796
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0,
-						"translation.y": 0,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/P/htdocs/rekrutacja/templates/AdminMainFrame.html",
-					"settings":
-					{
-						"buffer_size": 427,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								216,
-								216
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0,
-						"translation.y": 0,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/P/htdocs/rekrutacja/TestsList.class.php",
-					"settings":
-					{
-						"buffer_size": 462,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								116,
-								116
+								181,
+								181
 							]
 						],
 						"settings":
@@ -376,24 +364,25 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "/P/htdocs/rekrutacja/templates/MainMacros.html",
+					"buffer": 5,
+					"file": "/P/htdocs/rekrutacja/core/DBObject.class.php",
 					"settings":
 					{
-						"buffer_size": 684,
+						"buffer_size": 1454,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								210,
-								210
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0,
 						"translation.y": 0,
@@ -404,51 +393,104 @@
 			]
 		},
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
-					"buffer": 9,
-					"file": "/P/htdocs/rekrutacja/Router.class.php",
+					"buffer": 6,
+					"file": "/P/htdocs/rekrutacja/core/Template.class.php",
 					"settings":
 					{
-						"buffer_size": 1472,
+						"buffer_size": 3518,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1311,
-								1311
+								102,
+								102
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": false
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0,
-						"translation.y": 144,
+						"translation.y": 0,
 						"zoom_level": 1
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "/P/htdocs/rekrutacja/Controller.class.php",
+					"buffer": 7,
+					"file": "/P/htdocs/rekrutacja/controller/TestsConfigController.class.php",
 					"settings":
 					{
-						"buffer_size": 817,
+						"buffer_size": 3251,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								781,
-								781
+								2701,
+								2701
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0,
+						"translation.y": 1097,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/P/htdocs/rekrutacja/module/TestsListModule.class.php",
+					"settings":
+					{
+						"buffer_size": 543,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								157,
+								157
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/P/htdocs/rekrutacja/module/TestModule.class.php",
+					"settings":
+					{
+						"buffer_size": 1375,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1369,
+								1369
 							]
 						],
 						"settings":
@@ -461,21 +503,81 @@
 						"zoom_level": 1
 					},
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 4,
+			"sheets":
+			[
 				{
-					"buffer": 7,
-					"file": "/P/htdocs/rekrutacja/TestsList.class.php",
+					"buffer": 10,
+					"file": "/P/htdocs/rekrutacja/style.css",
 					"settings":
 					{
-						"buffer_size": 462,
+						"buffer_size": 8213,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								460,
-								460
+								5440,
+								5440
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0,
+						"translation.y": 4579.12,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/P/htdocs/rekrutacja/style_orig.css",
+					"settings":
+					{
+						"buffer_size": 12147,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6594,
+								6594
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0,
+						"translation.y": 7659,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/P/htdocs/rekrutacja/templates/AdminMainFrame.tpl.html",
+					"settings":
+					{
+						"buffer_size": 2016,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1464,
+								1374
 							]
 						],
 						"settings":
@@ -484,59 +586,52 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0,
-						"translation.y": 0,
+						"translation.y": 192,
 						"zoom_level": 1
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 11,
-					"file": "/P/htdocs/rekrutacja/TestsListController.class.php",
+					"buffer": 13,
+					"file": "/P/htdocs/rekrutacja/templates/AdminTestsList.tpl.html",
 					"settings":
 					{
-						"buffer_size": 1986,
+						"buffer_size": 3138,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								339,
-								339
+								350,
+								350
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": false
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0,
-						"translation.y": 0,
+						"translation.y": 96,
 						"zoom_level": 1
 					},
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 12,
-					"file": "/P/htdocs/rekrutacja/Template.class.php",
+					"buffer": 14,
+					"file": "/P/htdocs/rekrutacja/templates/AdminTestDetails.tpl.html",
 					"settings":
 					{
-						"buffer_size": 2338,
+						"buffer_size": 3368,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1128,
-								1141
+								170,
+								170
 							]
 						],
 						"settings":
@@ -579,8 +674,8 @@
 		"cols":
 		[
 			0,
-			0.369063,
-			0.70375,
+			0.321254,
+			0.659322,
 			1
 		],
 		"rows":
@@ -596,6 +691,94 @@
 		"height": 0,
 		"selected_items":
 		[
+			[
+				"questio",
+				"dal/TestQuestionDal.class.php"
+			],
+			[
+				"testde",
+				"templates/AdminTestDetails.tpl.html"
+			],
+			[
+				"dbob",
+				"core/DBObject.class.php"
+			],
+			[
+				"db",
+				"core/DB.class.php"
+			],
+			[
+				".tpl",
+				"templates/AdminTestsList.tpl.html"
+			],
+			[
+				".tpl",
+				"templates/AdminMainFrame.tpl.html"
+			],
+			[
+				"dal",
+				"dal/TestDal.class.php"
+			],
+			[
+				"contro",
+				"controller/TestsConfigController.class.php"
+			],
+			[
+				"templ",
+				"core/Template.class.php"
+			],
+			[
+				"sty",
+				"style_orig.css"
+			],
+			[
+				"inde",
+				"admin/index.php"
+			],
+			[
+				"sty",
+				"style.css"
+			],
+			[
+				"testli",
+				"TestsList.class.php"
+			],
+			[
+				"mainma",
+				"templates/MainMacros.tpl.html"
+			],
+			[
+				"quest",
+				"TestQuestion.class.php"
+			],
+			[
+				"test",
+				"Test.class.php"
+			],
+			[
+				"detailtpl",
+				"templates/AdminTestDetails.tpl.html"
+			],
+			[
+				"tpl",
+				"templates/AdminTestsList.tpl.html"
+			],
+			[
+				"index",
+				"admin/index.php"
+			],
+			[
+				"tpl",
+				"/P/htdocs/rekrutacja/templates/AdminTestDetails.tpl.html"
+			],
+			[
+				"test",
+				"Test.class.php"
+			],
+			[
+				"testli",
+				"templates/AdminTestsList.html"
+			],
 			[
 				"testlistcon",
 				"TestsListController.class.php"
@@ -639,9 +822,9 @@
 		],
 		"width": 0
 	},
-	"show_minimap": false,
+	"show_minimap": true,
 	"show_tabs": true,
 	"side_bar_visible": false,
-	"side_bar_width": 188,
+	"side_bar_width": 227,
 	"status_bar_visible": false
 }

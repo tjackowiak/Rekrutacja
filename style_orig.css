@@ -1,0 +1,917 @@
+/*
+
+Theme Name:Womack
+Theme URL: http://www.web2feel.com/womack/
+Description: Free WordPress theme released by web2feel.com
+Author: Jinsona
+Author URI: www.web2feel.com
+Version: 1.0.0
+Tags: Black, white, grey,2 column, 3D flash slider , thumbnail, right-sidebar, twitter, fixed-width, theme-options, threaded-comments, banner ads, adsense.
+
+
+
+*/
+
+
+	
+
+
+ table {
+	border: 1px solid #e7e7e7;
+	margin: 0 -1px 24px 0;
+	text-align: left;
+	width: 100%;
+}
+ tr th,
+ thead th {
+	color: #888;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 18px;
+	padding: 9px 24px;
+}
+ tr td {
+	border-top: 1px solid #e7e7e7;
+	padding: 6px 24px;
+}
+ tr.odd td {
+	background: #f2f7fc;
+}
+
+
+ul {
+	list-style: square;
+	}
+
+
+blockquote {
+	font-style: italic;
+	color: #555;
+	padding:10px;
+	}
+blockquote blockquote {
+	color: #777;
+	}
+blockquote em {
+	font-style: normal;
+	}
+
+
+pre {
+	padding: 9px;
+	background: #f9f9f9;
+	border: 1px solid #ccc;
+	}
+code {
+	padding: 0 3px;
+	background: #eee;
+	}
+pre code {
+	background: transparent;
+	}
+
+
+img.centered  {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	padding: 0px;
+	}
+	
+img.alignnone {
+	padding: 5px 5px;
+	margin: 0px 0px 10px 0px;
+	display: inline;
+	background:#ddd;
+	border: 1px solid #ccc;
+	}
+
+img.alignright {
+	padding: 5px 5px;
+	margin: 5px 0px 10px 10px;
+	display: inline;
+	background:#ddd;
+    border: 1px solid #ccc;
+	}
+
+img.alignleft {
+	padding: 5px 5px;
+	margin: 5px 10px 10px 0px;
+	display: inline;
+	background:#ddd;
+    border: 1px solid #ccc;
+	}
+	
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	}
+
+.alignright {
+	float: right;
+	margin: 0px 0px 10px 10px;
+	}
+
+.alignleft {
+	float: left;
+	margin: 0px 10px 10px 0px;
+	}
+	
+.rounded{
+
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+
+	
+
+
+
+
+	
+.subcribe{
+	position:absolute;
+	right:40px;
+	bottom:15px;
+}
+
+.subcribe a:link,.subcribe a:visited{
+	color:#222;
+}
+
+.subcribe a:hover{
+	color:#FFAB06;
+}
+
+
+
+.topboxy{
+	width:322px;
+	height:38px;
+	background:url(/rekrutacja/images/topbox.png);
+	float:right;
+	position:relative;
+}
+/* The Search */
+
+
+#search {
+
+	width:175px;
+	padding:0px 0px ;
+	margin:6px 20px 00px 0px;
+	height:20px;
+	background:#15171b;
+	float:right;
+	border:1px solid #393e48;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+
+}
+#search form {
+	margin: 0px 0px 0px 0px;
+	padding: 0;
+}
+
+#search fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#search p {
+	margin: 0;
+	font-size: 85%;
+}
+
+#s {
+	width:145px;
+	margin:0px 0px 0px 7px;
+	padding: 2px 5px;
+	height:14px;
+	font: normal 100% "Tahoma", Arial, Helvetica, sans-serif;
+	color:#aab5b2;
+	background:#15171b;
+	float:left;
+	border:none;
+	display:inline;
+}
+input#searchsubmit{
+	float:right;
+	display:inline;
+	margin:0px 0px 0px 0px;
+	height:30px;
+	width:70px;
+	background:#0c85d6;
+	color:#fff;
+	border:none;
+}
+
+#searchpage{
+	background:#fff;
+	border:1px solid #ccc;
+	margin:10px 10px 0px 10px;
+}
+
+#sform{
+	width:450px;
+	border:none;
+	padding:4px 5px;
+}
+
+#formsubmit{
+	float:right;
+	background:url(/rekrutacja/images/sfrm.png) repeat-x;
+	border-left:1px solid #ccc!important;
+	border:none;
+	padding:3px 5px;
+}
+
+.scover{
+	background:url(/rekrutacja/images/stripe.png);
+	padding:10px!important;
+	width:580px!important;
+}
+.sbox{
+	padding:10px;
+}
+.shead{
+	margin-bottom:30px;
+
+}
+.shead p{
+	margin-left:10px;
+	margin-bottom:10px;
+	color:#222;
+}
+
+h2.stitle{
+text-decoration: underline;
+	font-weight:normal;
+
+}
+
+.searchmeta{
+	margin-top:5px; 
+	color:#43873e;
+}
+	
+	
+/*  menu*/
+	
+
+
+
+
+/* Main Content*/	
+
+	
+
+
+.postimg{
+	float:left;
+	margin:10px 10px 10px 0px;
+	width:200px;
+	height:150px;
+	background:#dadada;
+	padding:5px;
+}
+
+
+
+	
+
+
+.comm{
+	color:#fff;
+	padding:2px 5px 2px 20px;
+	background:url(/rekrutacja/images/balloon.png) no-repeat;
+
+}
+
+.comm a:link,
+.comm a:visited {
+	color:#7b7b7b;
+	
+}
+.comm a:hover{
+	color:#444;
+
+}
+
+.postmeta {
+	font:10px  Tahoma, Georgia, Arial,century gothic,verdana, sans-serif;
+	text-transform:uppercase;
+	color:#B98302;
+	padding:5px 0px;
+	position:relative;
+	
+			}
+
+	
+
+.categorys{
+	padding:5px 0 5px 20px;
+	color:#000101;
+	background:url(/rekrutacja/images/tags.png) no-repeat;
+}
+
+.categorys a:link,.categorys a:visited{
+	color:#0758A9;
+
+	}
+	
+.categorys a:hover{
+	color:#000;
+	}
+
+
+
+
+/* right column */
+.right{
+	
+	float:right;
+	width:280px;
+	padding:20px 0px 0px 0;
+	display:inline;
+	overflow:hidden;
+
+}
+
+.outside{
+	background:url(/rekrutacja/images/stripe.png);
+	padding:10px;
+	margin-bottom:20px;
+}
+
+
+
+h3.sidetitl{
+
+	font-family: Georgia,Tahoma,Century gothic, sans-serif;
+	color:#000;
+	font-size:20px;
+	padding:15px 0px 10px 10px;
+	margin-bottom:5px;
+	font-weight:normal;
+		text-shadow:1px 1px 0px #ccc;
+
+}
+/* The Sidebar */
+
+
+.sidebox{
+	width:258px;
+	margin:0px 0px 0px 0px;
+	list-style:none;
+	background:url(/rekrutacja/images/post.png);
+	border:1px solid #fff;
+	font-size:11px;
+	}
+
+.sidebox ul {
+	list-style-type: none;
+	margin:  0px;
+	padding: 0px 0px 0px 0px ;
+
+	}
+.sidebox li{
+	list-style-type: none;
+	margin: 0 ;
+	padding: 0;
+
+	}
+.sidebox ul ul  {
+	list-style-type: none;
+	margin: 0;
+	padding: 0px 0px 0px 0px;
+	background-repeat:no-repeat;
+		}
+
+.sidebox ul ul ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border:0;
+	}
+
+.sidebox ul ul ul ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border:0;
+
+	}
+	
+.sidebox ul li {
+	height:100%;
+	line-height:18px;
+	clear:left;	
+	width:258px;
+	margin:0px 0px;
+	list-style-type: none;
+	}
+
+	
+.sidebox ul li a:link, .sidebox ul li a:visited {
+
+	color:#555;
+	border-bottom:1px dotted #aaa;
+	text-decoration: none;
+	padding: 5px 0px 5px 10px;
+	display:block;
+
+	}
+
+.sidebox ul li a:hover {
+
+	color: #0B79C4;
+	}
+
+
+.sidebox table{
+	width:100%;
+	text-align:center;
+	color:#787d7f;
+	}	
+	
+li.recentcomments{
+	padding:5px 10px;
+	
+}
+
+
+
+	
+/* --- FOOTER --- */
+	
+#footer {
+
+	padding:10px 0 10px 0px;
+	color:#172F40;
+	font-size:12px;
+	margin:10px auto;
+	font-family:Arial;
+
+	}
+
+#footer a:link , #footer a:visited{
+		color:#172F40;
+	}
+
+#footer a:hover {
+		color:#172F40;
+	}
+
+.fcred{
+
+	text-align:center;
+	margin:10px 0px 10px 10px;
+	line-height:16px;
+}
+
+/* The Navigation */
+
+#navigation{	
+	margin:0px 0px 10px 10px;
+	padding:5px 0px;
+	width:650px;
+	height:27px;
+	}
+
+	
+/* The Attachment */
+
+.contentCenter {
+	text-align:center;
+	}
+
+/* The Page Title */
+
+h2.pagetitle {
+	font-size:14px;
+	background:url(/rekrutacja/images/botom.png);
+	border:1px solid #032434;
+	color:#aaa;
+	font-weight:bold;
+	padding:10px 10px ;
+	margin-bottom:10px;
+	font-family:Arial,Georgia,Century gothic,  sans-serif;
+	}
+ h2.pagetitle a {
+ 	color:#507409;
+ }
+/* Comments */
+
+
+
+h3#comments{
+	font-size:14px;
+	background:url(/rekrutacja/images/botom.png);
+	border:1px solid #032434;
+	color:#aaa;
+	font-weight:bold;
+	padding:10px 10px ;
+	font-family:Arial,Georgia,Century gothic,  sans-serif;
+}
+
+
+ol.commentlist {
+	margin:0px 0 0;
+	clear:both;
+	overflow:hidden;
+	list-style:none;
+
+
+}
+ol.commentlist li {
+	margin:10px 0;
+	line-height:18px;
+	padding:10px;
+	border:1px solid #fff;
+	background:url(/rekrutacja/images/post.png);
+}
+
+ol.commentlist li .comment-author {
+	color:#000;
+
+}
+
+ol.commentlist li .comment-author a:link,ol.commentlist li .comment-author a:visited{
+
+	color:#000;
+	font-weight:bold;
+	text-decoration:none !important;
+}
+
+ol.commentlist li .comment-author .fn {
+	color:#000;
+	font-weight:bold;
+}
+
+cite.fn{
+	color:#000;
+	font-style:normal;
+}
+
+ol.commentlist li .comment-author .avatar{
+	float:right;
+	border:1px solid #ddd;
+	background:#fff;
+	padding:3px;
+}
+
+ol.commentlist li .comment-meta{
+	font-size:10px;
+
+}
+
+ol.commentlist li .comment-meta .commentmetadata{
+
+	color:#000;
+}
+
+ol.commentlist li .comment-meta a {
+	color:#1D81B6;
+	text-decoration:none !important;
+}
+
+ol.commentlist li p {
+	line-height:22px;
+	margin-top:5px;
+	color:#555;
+	font-size:12px;
+}
+
+ol.commentlist li .reply{
+	margin-top:10px;
+	font-size:10px;
+
+}
+
+ol.commentlist li .reply a{
+	background:url(/rekrutacja/images/reply.png) repeat-x;
+	border:1px solid #111;
+	color:#fff;
+	text-decoration:none;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+	padding:3px 10px;
+	box-shadow: 0 0 5px #555;
+	-moz-box-shadow: 0 0 5px #555;
+	-webkit-box-shadow: 0 0 5px #555;	
+}
+
+ol.commentlist li.odd {
+
+}
+
+ol.commentlist li.even {
+
+}
+
+ol.commentlist li ul.children {
+	list-style:none;
+	margin:1em 0 0;
+	text-indent:0;
+
+}
+
+ol.commentlist li ul.children li.depth-2 {
+	margin:0 0 0px 50px;
+
+}
+
+ol.commentlist li ul.children li.depth-3 {
+	margin:0 0 0px 50px;
+
+}
+
+ol.commentlist li ul.children li.depth-4 {
+	margin:0 0 0px 50px;
+
+}
+ol.commentlist li ul.children li.depth-5 {
+	margin:0 0 0px 50px;
+
+}
+.comment-nav{
+	padding:5px ;
+	height:20px;
+
+}
+
+.comment-nav a:link,.comment-nav a:visited{
+	color:#222;
+}
+
+
+
+
+.widebanner{
+
+	height:60px;
+	margin-top:10px;
+	padding:10px 0px;
+	background:url(/rekrutacja/images/ad1.jpg) repeat-x;
+	text-align:center;
+}
+
+
+.wp-pagenavi{
+
+	font-size:12px;
+	text-align: center !important;
+
+
+}
+.wp-pagenavi a, .wp-pagenavi a:link, .wp-pagenavi a:visited {
+
+	text-decoration: none;
+	background:#F2F2F2!important;
+	border: 1px solid #ddd !important;
+	color:#555 !important;
+	padding:3px 7px !important;
+	display: block;
+	text-align: center;
+	float: left;
+	margin-right: 4px;
+
+}
+
+
+.wp-pagenavi a:hover {
+	color: #ffffff;
+}
+
+.wp-pagenavi span.pages {
+
+display:none;
+}
+
+.wp-pagenavi span.current {
+	text-decoration: none;
+	background:#1D94F1 !important;
+	border: 1px solid #1474C7!important;
+	color:#fff !important;
+	padding:3px 7px !important;
+	display: block;
+	text-align: center;
+	float: left;
+	margin-right: 4px;
+
+}
+
+.wp-pagenavi span.extend {
+
+	text-decoration: none;
+	background:#1D94F1 !important;
+	border: 1px solid #1474C7!important;
+	color:#fff !important;
+	padding:3px 7px !important;
+	display: block;
+	text-align: center;
+	float: left;
+	margin-right: 4px;
+
+}	
+
+
+
+
+
+.featbox{
+	padding:10px ;
+	background:#fff;
+	margin:0px 0px 10px 0px;
+	border:1px solid #ddd;
+}
+
+.fblock{
+
+	border-bottom:1px dotted #ccc;
+	padding:10px 0px!important;
+	height:60px;
+	margin:0px 10px;
+}
+
+.fblock:hover{
+	background:#fafafa;
+}
+
+
+
+.phumb{
+	margin:0px 10px 0px 0px;
+	width:80px;
+	height:60px;
+	float:left;
+	
+}
+
+.fblock h3{
+	font-size:14px;
+	font-weight:bold;
+	padding:0px 0px 0px 0px;
+	font-family:arial;
+}
+
+.fblock h3 a:link,.fblock h3 a:visited{
+
+	font-weight:bold;
+	color:#222;
+}
+
+.fblock p{
+	color:#555;
+	margin:0px !important;
+	padding:5px 0px !important;
+	font-size:10px;
+}
+
+
+#slidearea{
+	height:350px;
+	overflow: hidden;
+	position: relative; 
+	width:900px;
+	margin:0px auto;
+	background:url(/rekrutacja/images/shadow.png) bottom no-repeat;
+}
+#flashcontent{
+	margin:0px 0px 0px 0px;
+	width:900px;
+	height:420px;
+	outline:none;
+}
+.slidimg{
+	width:750px;
+	height:250px;
+}
+
+
+
+
+
+
+
+
+
+.feedlist{
+	position:absolute;
+	top:8px;
+	left:25px;
+	
+}
+.feedlist ul {
+	list-style:none;
+}
+
+.feedlist ul li{
+	float:left;
+	margin:0px 7px 0px 0px;
+	display:block;
+}
+.getshort{
+height:25px;
+}
+
+h3.bothead{
+
+
+	font-size:20px;
+	padding:5px 0px 10px 5px;
+	color:#fff;
+	text-shadow:1px 1px 0px #172C2F;
+	font-family:Georgia;
+	font-weight:normal;
+}
+
+.botwid{
+	float:left;
+	width:160px;
+	padding-bottom:30px;
+	font-size:11px;
+	font-family:Arial,Tahoma,Century gothic,sans-serif;
+	margin:20px 0px 0px 15px;
+	color:#ddd;
+		list-style:none;
+	}
+.botwid ul {
+	list-style-type: none;
+	margin:  0px;
+	padding: 0px 0px 0px 0px ;
+
+
+	}
+.botwid li{
+	list-style-type: none;
+	margin: 0 ;
+	padding: 0;
+
+	}
+.botwid ul ul  {
+	list-style-type: none;
+	margin: 0;
+	padding: 0px 0px 0px 0px;
+	background-repeat:no-repeat;
+		}
+
+.botwid ul ul ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border:0;
+	}
+
+.botwid ul ul ul ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border:0;
+
+	}
+
+.botwid ul li {
+	height:100%;
+	line-height:18px;
+	clear: left;	
+	width: 160px;
+	list-style-type: none;
+	text-shadow:1px 1px 0px #111;
+
+	}
+	
+.botwid ul li a:link, .botwid ul li a:visited  {
+	
+	color: #7F7F7F;
+	text-decoration: none;
+	padding: 5px 0px 5px 5px;
+	display:block;
+	border-bottom:1px solid #333B3F;
+	
+	}
+
+.botwid ul li a:hover{
+
+	color: #FFF;
+	}
+
+.botwid p{
+	padding: 7px 10px;
+	margin:0;
+	}
+
+.botwid table {
+	width:100%;
+	text-align:center;
+	color:#787d7f;
+	}			

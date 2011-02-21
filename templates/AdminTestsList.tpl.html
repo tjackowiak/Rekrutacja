@@ -1,36 +1,91 @@
 <!-- Admin tests list -->
 <tal:block metal:define-macro="AdminTestsList">
 
-<div id="AdminTestsList" phptal:debug="">
-<h1>Lista testow</h1>
-
 <div tal:condition="not:true:this/getTestsList">
 	<strong>Nie znaleziono testow</strong>
 </div>
-<ul tal:condition="true:this/getTestsList">
-	<li tal:repeat="test this/getTestsList">
-		<a href="${link:this,'show',['id'=>test.id]}">${test/name}</a> (${test/duration})
-		<i tal:condition="exists:test/description">${test/description}</i>
-		<a href="${link:this,'edit',['id'=>test.id]}">Edytuj</a>
-	</li>
-</ul>
 
 
-<h2>Nowy test:</h2>
 
-<!-- ERROR - Bład wypełniania formularza -->
-<span tal:condition="exists:params/TestDataError"
-style="border:1px solid red;background-color:#fbb">
-<strong>! ${params/TestDataError/field}</strong> - ${params/TestDataError/error}
-</span>
+<!-- Lista testow -->
+<tal:block tal:condition="true:this/getTestsList">
+<div class="contentboxwraper dropshadow" tal:repeat="test this/getTestsList">
+	<div class="contentbox">
+		<div class="title">
+			<h2><a href="${link:this,'show',['id'=>test.id]}">${test/name}</a></h2>
+			<a href="${link:this,'edit',['id'=>test.id]}#EditForm" class="action"><div> Edytuj </div></a>
+			<div class="titlemeta">
+				<span class="info"> Pytań: ${test/questionsCount|string:0} </span>
+				<span class="clock"> ${test/duration} min. </span>
+				<span class="author"> Edytowany przez: kef </span>
+			</div> <!-- titlemeta -->
+		</div> <!-- title -->
 
-<form method="post" action="${link:this, 'modify'}">
-<input type="hidden" name="TestId" tal:condition="true:params/TestData/id" value="${params/TestData/id}"/>
-nazwa: <input type="text" name="TestName" value="${params/TestData/name|nothing}"/><br/>
-czas trwania: <input type="text" name="TestDuration" value="${params/TestData/duration|nothing}"/><br/>
-opis: <textarea name="TestDescription">${params/TestData/description|nothing}</textarea><br/>
-<input type="submit"/>
-</form>
+		<div class="entry" tal:condition="true:test/description">
+			<p>${test/description}</p>
+		</div> <!-- entry -->
+		<div class="clear"></div>
+	</div> <!-- contentbox -->
+</div> <!-- contentboxwraper -->
+</tal:block>
+
+<!-- Dodaj/Edytuj Test -->
+<a id="EditForm"/>
+<tal:block tal:condition="true:messages" metal:use-macro="MainMacros.tpl.html/Messages" />
+<div id="commentsbox">
+<div id="respond">
+	<form id="TestForm" method="post" action="${link:this, 'modify'}#EditForm">
+	<h3 class="close">Dodaj/Edytuj Test</h3>
+	<input type="hidden" name="TestId" tal:condition="true:params/TestData/id" value="${params/TestData/id}"/>
+	<label for="TestName">Nazwa <small>(wymagana)</small></label>
+	<input type="text" tabindex="1" id="TestName" name="TestName" value="${params/TestData/name|nothing}"/>
+
+	<label for="TestDuration">Czas trwania, w min. <small>(wymagany)</small></label>
+	<input type="text" tabindex="2" id="TestDuration" name="TestDuration" value="${params/TestData/duration|nothing}"/>
+
+	<label for="TestDuration">Opis</label>
+	<textarea tabindex="3" rows="5" name="TestDescription">${params/TestData/description|nothing}</textarea><br/>
+	<!-- <input type="submit" value="Submit" tabindex="5" id="commentSubmit" name="submit"/> -->
+	</form>
+	<a href="#" class="action" id="add_or_edit"><div> Dodaj nowy </div></a>
+	<div class="clear"></div>
 </div>
+</div>
+
+<script>
+$(document).ready(function() {
+	var action="${this/getAction}";
+	var errors=${exists:params/TestDataError};
+	var error_field="${params/TestDataError/field|nothing}";
+	var error_decription="${params/TestDataError/error|nothing}";
+
+	if(errors > 0){
+		// Nie moge przekazac zwyklego stringa z powodu bledu PHPTala
+		// zamienia && na $amp;$amp;
+		error_msg=document.createElement('span');
+		$(error_msg).text(error_decription).addClass('inline_error');
+		$("#Test"+error_field).after(error_msg).addClass('error_field dropshadow');
+	}
+
+	if(action != "edit" && errors == 0) {
+		$("#TestForm").hide();
+	} else {
+		$("#add_or_edit div").text("Zapisz");
+	}
+
+	$("#add_or_edit").click(function() {
+		if ($("#TestForm").is(":hidden")) {
+			$("#TestForm").slideDown();
+			$("#add_or_edit div").text("Zapisz");
+		} else {
+			$("#TestForm").submit();
+		}
+     	return false;
+	});
+	$("h3.close").click(function() {
+		$("#TestForm").slideUp();
+	});
+ });
+</script>
 
 </tal:block>

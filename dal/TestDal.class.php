@@ -1,6 +1,6 @@
 <?php
 
-class Test extends DBObject
+class TestDal extends DBObject
 {
 	protected $_name;
 	protected $_duration;

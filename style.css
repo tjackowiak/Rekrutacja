@@ -1,0 +1,481 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+/* Sticker footer */
+/* @see http://ryanfait.com/resources/footer-stick-to-bottom-of-page/ */
+html, body {
+	height: 100%;
+}
+
+body {
+	margin:0 auto;
+	padding:0px 0px 0px 0px;
+	background:#F6F6F6 url(/rekrutacja/images/body.png) ;
+	font-family:verdana,Arial, Tahoma,Century gothic,  sans-serif;
+	font-size:12px;
+}
+img {
+	border:0;
+	margin: 0 0;
+}
+a {
+	color: #5384BF;
+	text-decoration: none;
+	outline:none;
+}
+a:visited {
+	color: #5384BF;
+}
+a:hover, a:active {
+	color: #214974;
+	text-decoration: none;
+}
+h1,h2, h3, h4, h5, h6 {
+	line-height:125%;
+	font-weight: bold;
+}
+.dropshadow{
+	box-shadow: 2px 2px 10px #555;
+	-moz-box-shadow: 2px 2px 10px #555;
+	-webkit-box-shadow: 2px 2px 10px #555;
+}
+.roundedMedium{
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+}
+.roundedSmall{
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+}
+.clear {
+	clear:both;
+}
+.close
+{
+	background-image: url(/rekrutacja/images/close2.png) !important;
+	background-repeat: no-repeat !important;
+	background-position: top right !important;
+}
+
+
+
+/*Box model of page*/
+/* Wraper zawierajacy naglowek i srodek */
+#wrapper {
+	min-height: 100%;
+	margin:0 auto -100px; /* magin-botom == footer.height */
+}
+
+/* --- HEADER --- */
+#header {
+	background:url(/rekrutacja/images/mast.png) repeat-x;
+	height:141px;
+}
+/* Header: Box z nazwa strony */
+#top {
+	height:100px;
+	margin:auto;
+	width:900px;
+	position:relative;
+}
+.pagename {
+	width:400px;
+	margin:20px 0 0 10px;
+	height:70px;
+	text-align:left;
+	float:left;
+	font-family:Georgia;
+}
+.pagename h1  {
+	font-size:34px;
+	padding:0 0 0px 0;
+	font-weight:normal;
+}
+.pagename h1  a:link, .pagename h1  a:visited{ 
+	color: #fff; 
+	display:block;
+	margin:5px 0 0 0px;
+}
+.pagename h1  a:hover { 
+	color: #fff; 
+}
+.pagename h2 {
+	margin:0px 0px 0px 0px;
+	font-size:16px;
+	font-weight:normal;
+	color: #BFBFBF;
+	text-shadow:1px 1px 0px #172527;
+}
+
+/* Header: Box z menu */
+#menu{
+	font: 12px Arial,Tahoma,Century gothic,verdana,  sans-serif;
+	font-weight:normal;
+	margin: 0px auto;
+	padding: 0px 0px;
+	height:41px;
+	overflow:hidden;
+	width:900px;
+}
+#menu ul
+{
+	float: left;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+#menu li
+{
+	float: left;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+		color: #BFBFBF;
+	line-height:41px;
+}
+#menu li a, #menu li a:link, #menu li a:visited
+{
+	color: #BFBFBF;
+	line-height:41px;
+	display: block;
+	font-weight: normal;
+	padding: 0px 10px ;
+	text-shadow:1px 1px 1px #203F04;
+}
+#menu li a:hover, #menu li a:active
+{
+	line-height:41px;
+	background:url(/rekrutacja/images/menua.png) repeat-x;
+	color: #fff;
+	display: block;
+}
+#menu li li a, #menu li li a:link, #menu li li a:visited
+{
+	background:#0C1820;
+	border-bottom: 1px solid #000;
+	color: #BFBFBF;
+	float: none;
+	margin: 0px;
+	line-height:34px;
+	width: 150px;
+}
+#menu li li a:hover, #menu li li a:active
+{
+	background: #11222E;
+	color: #fff;
+	float: none;
+	line-height:34px;
+	margin: 0px;
+	width: 150px;
+}
+#menu li ul
+{
+	height: auto;
+	left: -999em;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	width: 170px;
+	border-left: 1px solid #23272A;
+	border-right: 1px solid #23272A;
+	z-index: 9999;
+}
+#menu li li
+{
+}
+#menu li ul a
+{
+	width: 140px;
+}
+#menu li ul a:hover, #menu li ul a:active
+{
+}
+#menu li ul ul
+{
+	margin: -35px 0 0 170px;
+}
+#menu li:hover ul ul, #menu li:hover ul ul ul, 
+#menu li.sfhover1 ul ul, #menu li.sfhover1 ul ul ul
+{
+	left: -999em;
+}
+#menu li:hover ul, #menu li li:hover ul, 
+#menu li li li:hover ul, #menu li.sfhover1 ul, 
+#menu li li.sfhover1 ul, #menu li li li.sfhover1 ul
+{
+	left: auto;
+}
+#menu li:hover, #menu li.sfhover1
+{
+	position: static;
+}
+
+/* --- CONTENT BOX --- */
+/* Content wraper */
+#casing {
+	padding:10px 0px 20px 0px;
+	/*float:left;*/
+	width:900px;
+	margin:0px auto;
+}
+
+/* Message box */
+.message_ok {
+	/*border:1px solid #0f0;*/
+	border:1px solid #336633;
+	padding:10px 5px 10px 35px;
+	margin: 10px;
+	background:url(/rekrutacja/images/tick_32.png) no-repeat;
+	/*background-color:#bfb;*/
+	background-color:#66DD66;
+}
+.message_warning {
+	border:1px solid #ff0;
+	padding:10px 5px 10px 35px;
+	margin: 10px;
+	background:url(/rekrutacja/images/warning_32.png) no-repeat;
+	background-color:#ffb;
+}
+.message_error {
+	/*border:1px solid #f00;*/
+	border:1px solid #DD0000;
+	padding:10px 5px 10px 35px;
+	margin: 10px;
+	background:url(/rekrutacja/images/delete_32.png) no-repeat;
+	/*background-color:#fbb;*/
+	background-color:#DD6666;
+}
+
+
+
+
+.titlemeta{
+	border-top:1px dotted #898989;
+	border-bottom:1px dotted #898989;	
+	padding:5px 5px;
+	font-size:10px;
+	text-transform:uppercase;
+	text-shadow:-1px -1px 0px #fff;
+}
+.title{
+	margin: 0 0 0 0px;
+	padding: 0px 0px 0px 0px;
+}	
+.title  h2 {
+	margin: 0px 0 0px 0;
+	padding: 0px 0px 10px 0px;
+	font: 26px Georgia,Arial,century gothic,verdana, sans-serif;
+	font-weight:normal;
+	overflow:hidden;
+	text-shadow:1px 1px 0px #ccc;
+	display:inline-block;
+}
+.title  h2 a, .title  h2 a:link, .title  h2 a:visited  {
+	color:#222;
+	background-color: transparent;
+}	
+.title  h2 a:hover  {
+	color: #000;
+	background-color: transparent;
+}
+.info{
+	color:#7b7b7b;
+	padding:2px 5px 2px 20px;
+	background:url(/rekrutacja/images/info.png) no-repeat;
+}	
+.author{
+	color:#7b7b7b;
+	padding:2px 5px 2px 20px;
+	background:url(/rekrutacja/images/user.png) no-repeat;
+}
+.clock{
+	color:#7b7b7b;
+	padding:2px 5px 2px 20px;
+	background:url(/rekrutacja/images/clock.png) no-repeat;
+}
+
+/* Action button */
+a.action{
+	color:#fff;
+}
+.action div{
+	float:right;
+	/*background:url(/rekrutacja/images/more.png);*/
+	background:url(/rekrutacja/images/button.png) repeat-x;
+	padding:8px 10px;
+	min-width:85px;
+	height:12px;
+	text-align:center;
+	font-weight:bold;
+	text-shadow:1px 1px 0px #000;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: 0 0 5px #555;
+	-moz-box-shadow: 0 0 5px #555;
+	-webkit-box-shadow: 0 0 5px #555;
+}
+
+}			
+	
+
+
+
+
+
+
+
+
+
+
+/* --- MAIN BODY --- */
+#content {
+	/*float:left;*/
+	width: 900px;
+	/*height:100%;*/
+	/*padding:0px 0px 0px 0px;*/
+	margin:20px 0px 0px 0px;
+	/*display:inline;*/
+	/*overflow:hidden;*/
+}
+.contentboxwraper {
+	/*margin: 0px 0px 20px 0px;*/
+	margin: 10px;
+	height:100%;
+	color:#555;
+	padding:10px;
+	background:url(/rekrutacja/images/stripe.png);
+	}
+.contentbox{
+	background:url(/rekrutacja/images/post.png);
+	padding:5px;
+	border:1px solid #fff;
+}	
+.entry {
+	text-shadow:-1px -1px 0px #fff;
+}
+.entry a:link,
+.entry a:visited {
+	color:#1D81B6;
+	background-color: transparent;
+}
+.entry a:hover {
+	color:#00488F;
+	background-color: transparent;
+	text-decoration: none;
+}
+.entry ul, .entry ol{
+  margin: .4em 0 1em;
+  line-height: 150%;
+}
+.entry ul li, .entry ol li{
+  list-style-position:outside;
+  margin-left: 1.6em;
+}
+.entry p{
+	margin:5px 0 0;
+	/*padding:5px 0px;*/
+	line-height:24px;
+}
+
+
+
+
+/* --- EDIT BOX --- */
+#commentsbox {
+	margin:10px;
+	padding:10px;
+	/*width:590px;*/
+	background:url(/rekrutacja/images/stripe.png);
+}
+#respond{
+	border:1px solid #fff;
+	padding:5px;
+	margin:0px 0px;
+	background:#f4f4f4;
+}
+#respond h3 {
+	font-size:14px;
+	color:#fff;
+	background:#FFAB06;
+	font-weight:bold;
+	padding:10px 10px ;
+}
+
+#commentform {
+	padding:10px 20px 0;
+}
+
+#commentform p{
+	margin:5px 0px ;
+	color:#444;
+}
+
+#commentform p a{
+	color:#0C83D4;
+}
+#respond label{
+	display:block;
+	padding:5px 0;
+	color:#444;
+}
+#respond  label small {
+	font-size:10px;
+}
+#respond input {
+	width:50%;
+	padding:5px 5px;
+	margin:0 10px 5px 0;
+	background:#fff;
+	border:1px solid #ddd;
+	color:#555;
+}
+#respond select {
+	width:51%;
+	padding:5px 5px;
+	margin:0 10px 5px 0;
+	background:#fff;
+	border:1px solid #ddd;
+	color:#555;
+}
+#respond textarea {
+	background:#fff;
+	border:1px solid #ddd;
+	width:80%;
+	margin:0px 0px 0px 0px;
+	padding:5px 5px;
+	color:#555;
+}
+#respond .inline_error {
+	display:inline-block;
+	height:16px;
+	margin:0 0 0 5px;
+	padding:0 0 0 25px;	
+	background:url("/rekrutacja/images/delete_16.png") no-repeat;
+}
+#respond .error_field {
+	border: 1px solid red;
+}
+
+
+
+
+/* --- FOOTER --- */
+.stripline {
+	height:20px;
+	background:url(/rekrutacja/images/stripe.png);
+}
+#bottom {
+	margin: 0px auto;
+	height: 80px;
+	width: 900px;
+}
+.bottomcover {
+	background:url(/rekrutacja/images/botom.png) ;
+	margin:0px auto;
+}	
+
+

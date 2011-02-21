@@ -8,8 +8,8 @@ class DB
 	private static $instance = NULL;
 	private $host = 'localhost';
 	private $db   = 'rekrutacja';
-	private $user = 'rekrutacja';
-	private $pass = 'rekrutacja';
+	private $user = 'root';
+	private $pass = 'root';
 	private $dbh  = NULL;
 
 	public static function getInstance()

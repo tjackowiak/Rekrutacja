@@ -1,6 +1,7 @@
 <?php
 session_start();
 require '../config.php';
+Config::getInstance();
 // var_dump($_SERVER);
 // var_dump(Router::getRoute('test', 'action', array('id'=>123)));
 
@@ -81,4 +82,4 @@ class AdminController extends Controller
 $controller = new AdminController($_GET, $_POST);
 $controller->run();
 
-var_dump($controller->getAccess());
+// var_dump($controller->getAccess());

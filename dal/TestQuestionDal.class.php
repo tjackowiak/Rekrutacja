@@ -1,6 +1,6 @@
 <?php
 
-class TestQuestion extends DBObject
+class TestQuestionDal extends DBObject
 {
 	protected $_testId;
 	protected $_type;
@@ -25,7 +25,6 @@ class TestQuestion extends DBObject
 	public function create()
 	{
 		$res = $this->_dbh->query('insert into TestQuestions (
-			TestQuestionId,
 			TestId,
 			TestQuestionType,
 			TestQuestionText,
@@ -33,7 +32,6 @@ class TestQuestion extends DBObject
 			TestQuestionPoints,
 			TestQuestionEnabled)
 			values (
-				"'.$this->_id      .'",
 				"'.$this->_testId  .'",
 				"'.$this->_type    .'",
 				"'.$this->_text    .'",

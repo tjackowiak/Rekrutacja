@@ -1,22 +1,70 @@
 <!-- Admin main -->
+<!-- Original theme: http://jinsonathemes.com/fabs/?themedemo=Womack -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="pl-PL">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name='robots' content='noindex,nofollow' />
+<link rel="stylesheet" href="/rekrutacja/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/rekrutacja/style_orig.css" type="text/css" media="screen" />
+<link rel="icon" type="image/png" href="/rekrutacja/images/user_32.png" />
+<script type="text/javascript" src="/rekrutacja/js/jquery-1.5.min.js"></script>  
 
-<html>
+<title>Rekrutacje - Grupa Allegro</title>
+
+</head>
 <body>
-<ul>
-	<li>Rekrutowani</li>
-	<li><a href="${link:'TestConfig'}">Testy</a></li>
-</ul>
+<div id="wrapper">
 
-<tal:block tal:condition="true:messages" metal:use-macro="MainMacros.html/Messages" />
+<div id="header"> 
+	<div id="top">
+		<div class="pagename">
+			<h1><a href="/rekrutacja" title="Rekrutacja">Rekrutacje</a></h1>
+			<h2>Aplikacja rekrutacyjna Grupy Allegro</h2>
+		</div> <!-- pagename -->
+	</div> <!-- top -->
 
-<!-- ${php:var_dump(blocks)} -->
-<!-- Block: Main -->
-<tal:block tal:condition="php:isset(blocks['main'])"
-tal:define="
-this blocks/main/controller;
-params blocks/main/parameters"
-metal:use-macro="${blocks/main/template}" />
-<!-- /Block: Main -->
+	<div id="menu">
+		<ul>
+			<li><a href="/">Rekrutowani</a></li>
+			<li><a href="/">Konfiguracja</a>
+				<ul>
+					<li><a href="${link:'TestConfig'}">Testy</a></li>
+					<li><a href="${link:'TestConfig'}">Uprawnienia</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div> <!-- Header -->
+
+
+
+<div id="casing">
+	<div id="content">
+
+	<tal:block tal:condition="true:messages" metal:use-macro="MainMacros.tpl.html/Messages" />
+	<!-- ${php:var_dump(blocks)} -->
+	<!-- Block: Main -->
+	<tal:block tal:condition="php:isset(blocks['main'])"
+	tal:define="
+	this blocks/main/controller;
+	params blocks/main/parameters"
+	metal:use-macro="${blocks/main/template}" />
+	<!-- /Block: Main -->
+
+
+	</div> <!-- content -->
+</div> <!-- casing -->
+<div class="clear" style="height:100px"></div>
+</div> <!-- wrapper -->
+
+<!-- stripline -->
+<div class="stripline"></div>
+
+<!-- bottom -->
+<div class="bottomcover">
+<div id="bottom" /> <!-- bottom -->
+</div> <!-- bottomcover -->
 
 
 </body>

@@ -1,5 +1,5 @@
 <?php
-require 'libs/PHPTAL/PHPTAL.php';
+// require 'libs/PHPTAL/PHPTAL.php';
 
 class Template
 {
@@ -11,7 +11,7 @@ class Template
 
 	function __construct( $template_name )
 	{
-		$this->templates_path = dirname(__FILE__) . $this->templates_path;
+		$this->templates_path = Config::getInstance()->getBaseDir() . $this->templates_path;
 		$this->tpl = new PHPTAL($this->templates_path . $template_name . '.tpl.html');
 	}
 
