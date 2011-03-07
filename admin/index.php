@@ -13,7 +13,7 @@ class AdminController extends Controller
 	{
 		$this->_tpl        = new Template('AdminMainFrame');
 		$router            = new Router($_SERVER);
-		$defaultController = 'TestsConfigController';
+		$defaultController = 'TestsListController';
 		
 
 		$routeTo = $router->determineRoute();
@@ -26,12 +26,13 @@ class AdminController extends Controller
 		}
 		else
 		{
+			echo('default');
 			$controllerName = $defaultController;
 		}
 
 		try
 		{
-			$controller = new $controllerName($this->_get, $this->_post);
+			$controller = new $controllerName($this->_data);
 			$controller->setAction($routeTo['action']);
 			$this->fillBlock('main', $controller);
 			
@@ -79,7 +80,7 @@ class AdminController extends Controller
 	}
 }
 
-$controller = new AdminController($_GET, $_POST);
+$controller = new AdminController($_REQUEST);
 $controller->run();
 
 // var_dump($controller->getAccess());

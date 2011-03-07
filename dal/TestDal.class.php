@@ -25,31 +25,31 @@ class TestDal extends DBObject
 	protected function validateName()
 	{
 		if( empty($this->_name) )
-			throw new DBObjectException('name', 'Nazwa nie może być pusta');
+			throw new InvalidDataException('name', 'Nazwa nie może być pusta');
 		if( mb_strlen($this->_name) > $this->config['nameMaxLength'] )
-			throw new DBObjectException('name', 'Nazwa jest za długa');
+			throw new InvalidDataException('name', 'Nazwa jest za długa');
 	}
 
 	protected function validateDuration()
 	{
 		$duration = intval($this->_duration);
 		if( $duration < 1 || $duration > $this->config['timeMaxDuration'] )
-			throw new DBObjectException('duration', 'Błędny czas trwania');
+			throw new InvalidDataException('duration', 'Błędny czas trwania');
 		$this->_duration = $duration;
 	}
 
-	public function getQuestionsList()
-	{
-		if( empty($this->_questionsList) )
-		{
-			$result = $this->_dbh->query('select TestQuestionId from TestQuestions where TestId = '.$this->_id);
-			while($row = $result->fetch_assoc())
-			{
-				$this->_questionsList[$row['TestQuestionId']] = new TestQuestion($row['TestQuestionId']);
-			}
-		}
-		return $this->_questionsList;
-	}
+	// public function getQuestionsList()
+	// {
+	// 	if( empty($this->_questionsList) )
+	// 	{
+	// 		$result = $this->_dbh->query('select TestQuestionId from TestQuestions where TestId = '.$this->_id);
+	// 		while($row = $result->fetch_assoc())
+	// 		{
+	// 			$this->_questionsList[$row['TestQuestionId']] = new TestQuestion($row['TestQuestionId']);
+	// 		}
+	// 	}
+	// 	return $this->_questionsList;
+	// }
 
 	public function create()
 	{

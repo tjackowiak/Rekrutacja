@@ -1,6 +1,6 @@
 <?php
 
-class DBObjectException extends Exception
+class InvalidDataException extends Exception
 {
 	public $fieldName;
 	// public $errorMessage;

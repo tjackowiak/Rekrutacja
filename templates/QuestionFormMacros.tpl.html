@@ -1,0 +1,31 @@
+<!-- Formatki do edycji pytan -->
+<tal:block metal:define-macro="QuestionEditForm">
+	<label for="TestQuestionPoints">Punkty <small>(wymagane)</small></label>
+	<input type="text" tabindex="1" id="TestQuestionPoints" name="TestQuestionPoints" value="${params/QuestionForm/points|nothing}"/>
+
+	<label for="TestQuestionText">Pytanie</label>
+	<textarea tabindex="2" rows="5" name="TestQuestionText">${params/QuestionForm/text|nothing}</textarea><br/>
+
+	<label for="TestQuestionText">Dodatkowe informacje</label>
+	<textarea tabindex="3" rows="5" name="TestQuestionText">${params/QuestionForm/text|nothing}</textarea><br/>
+</tal:block>
+
+<!-- Pytanie otwarte -->
+<tal:block metal:define-macro="QuestionEditForm_open">
+<div id="QuestionType_open" style="display:none">
+
+	<label for="TestQuestionAnswers">Odpowiedź</label>
+	<textarea tabindex="3" rows="5" name="TestQuestionAnswers">${params/QuestionForm/answers|nothing}</textarea><br/>
+</div>
+</tal:block>
+
+<!-- Pytanie zamknięte -->
+<tal:block metal:define-macro="QuestionEditForm_closed">
+<div id="QuestionType_closed" style="display:none">
+
+	<label for="TestQuestionAnswerA">Odpowiedź A</label>
+	<input type="checkbox" name="TestQuestionAnswerA"/><br/>
+	<label for="TestQuestionAnswerB">Odpowiedź B</label>
+	<input type="checkbox" name="TestQuestionAnswerB"/><br/>
+</div>
+</tal:block>

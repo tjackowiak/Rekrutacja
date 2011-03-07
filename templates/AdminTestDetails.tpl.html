@@ -24,28 +24,25 @@
 
 
 <!-- Dodaj/Edytuj Pytanie -->
+<!-- Laduje formatki do edycji pytan -->
+<tal:block
+tal:repeat="qType params/AvailableQuestionTypes"
+metal:use-macro="QuestionFormMacros.tpl.html/QuestionEditForm_${qType/shortName}" />
+
+<!-- Formularz edycji -->
 <div id="commentsbox">
 <div id="respond">
-	<form id="QuestionForm" method="post" action="${link:this, 'modifyQuestion', ['testId'=>params['Test'].id]}">
+	<form id="QuestionForm" method="post" action="${link:this, 'modify', ['testId'=>params['Test'].id]}">
 	<h3 class="close">Dodaj/Edytuj Pytanie</h3>
 	<input type="hidden" name="TestQuestionId" value="${params/QuestionForm/id|nothing}"/>
 
 	<label for="TestQuestionType">Typ <small>(wymagany)</small></label>
 	<select tabindex="1" id="TestQuestionType" name="TestQuestionType">
-		<option value="php">PHP</option>
-		<option value="sql">SQL</option>
-		<option value="closed">Zamknięte</option>
-		<option value="open">Otwarte</option>
+		<option tal:repeat="qType params/AvailableQuestionTypes" value="${qType/shortName}">${qType/fullName}</option>
 	</select>
 
-	<label for="TestQuestionPoints">Punkty <small>(wymagane)</small></label>
-	<input type="text" tabindex="1" id="TestQuestionPoints" name="TestQuestionPoints" value="${params/QuestionForm/points|nothing}"/>
-
-	<label for="TestQuestionText">Pytanie</label>
-	<textarea tabindex="3" rows="5" name="TestQuestionText">${params/QuestionForm/text|nothing}</textarea><br/>
-
-	<label for="TestQuestionAnswers">Odpowiedź</label>
-	<textarea tabindex="3" rows="5" name="TestQuestionAnswers">${params/QuestionForm/answers|nothing}</textarea><br/>
+	<tal:block metal:use-macro="QuestionFormMacros.tpl.html/QuestionEditForm" />
+	<div id="QuestionFormArea"></div>
 
 	</form>
 	<a href="#" class="action" id="add_or_edit"><div> Dodaj pytanie </div></a>
@@ -54,8 +51,7 @@
 </div>
 
 
-
-<!-- Informacje o tescie -->
+<!-- Lista pytan -->
 <div id="QuestionList">
 <div class="contentboxwraper dropshadow" tal:repeat="question params/Test/getQuestionsList" id="Question${question/id}">
 <div class="contentbox">
@@ -69,7 +65,7 @@
 	<h3>Pytnie</h3>
 	<pre>${question/text}</pre>
 	<h3>Odpowiedzi</h3>
-	<pre>${question/answers}</pre>
+	<pre>${question/answer}</pre>
 
 	<div class="clear"></div>
 </div> <!-- contentbox -->
@@ -86,12 +82,31 @@ $(document).ready(function() {
 	var error_field="${params/TestDataError/field|nothing}";
 	var error_decription="${params/TestDataError/error|nothing}";
 
+
+	//
+	// Obsluga wyboru formularza wypenianie pytania
+	//
+	$("#TestQuestionType").change(questionTypeChange)
+	$("#TestQuestionType").val('closed').trigger('change');
+
+	function questionTypeChange()
+	{
+		// alert($("#TestQuestionType").val());
+		var type = $("#TestQuestionType").val()
+		$("#QuestionFormArea").slideUp(200, function(){
+			$(this).html($("#QuestionType_"+type).html()).slideDown(200);
+		});
+	}
+
+	//
+	// Obsluga podsiwetlania pola z bledem
+	//
 	if(errors > 0){
 		// Nie moge przekazac zwyklego stringa z powodu bledu PHPTala
 		// zamienia && na $amp;$amp;
 		error_msg=document.createElement('span');
 		$(error_msg).text(error_decription).addClass('inline_error');
-		$("#Test"+error_field).after(error_msg).addClass('error_field dropshadow');
+		$("#TestQuestion"+error_field).after(error_msg).addClass('error_field dropshadow');
 	}
 
 	if(action != "edit" && errors == 0) {

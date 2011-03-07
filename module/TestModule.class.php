@@ -34,24 +34,10 @@ class TestModule
 		return $this->_questionsList === NULL ? array() : $this->_questionsList;
 	}
 
-	public function fillQuestion( $data )
-	{
-		$question = new TestQuestionDal();
-		$question->id      = $data['TestQuestionId'];
-		// $this->_testId  = $row['TestId'];
-		$question->type    = $data['TestQuestionType'];
-		$question->text    = $data['TestQuestionText'];
-		$question->answers = $data['TestQuestionAnswers'];
-		$question->points  = $data['TestQuestionPoints'];
-		$question->enabled = true;
-
-		return $question;
-	}
-
-	public function addQuestion( TestQuestionDal $question)
-	{
-		$question->testId = $this->_test->id;
-		$question->save();
-	}
+	// public function addQuestion( TestQuestionDal $question)
+	// {
+	// 	$question->testId = $this->_test->id;
+	// 	$question->save();
+	// }
 
 }

@@ -60,7 +60,7 @@ class Config
 		{
 			$file = $this->_baseDir.'controller/'.basename($class_name) . '.class.php';;
 		}
-		elseif( preg_match('/\wModule$/', $class_name) )
+		else//if( preg_match('/\wModule$/', $class_name) )
 		{
 			$file = $this->_baseDir.'module/'.basename($class_name) . '.class.php';;
 		}
