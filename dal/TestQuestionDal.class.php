@@ -40,7 +40,8 @@ class TestQuestionDal extends DBObject
 
 	public function create()
 	{
-		$res = $this->_dbh->query('insert into TestQuestions (
+
+		$res = $this->_dbh->queryBinded('insert into TestQuestions (
 			TestId,
 			TestQuestionType,
 			TestQuestionText,
@@ -48,16 +49,38 @@ class TestQuestionDal extends DBObject
 			TestQuestionAnswer,
 			TestQuestionPoints,
 			TestQuestionEnabled)
-			values (
-				"'.$this->_testId    .'",
-				"'.$this->_type      .'",
-				"'.$this->_text      .'",
-				"'.$this->_answerTip .'",
-				"'.$this->_answer    .'",
-				"'.$this->_points    .'",
-				"'.$this->_enabled   .'")');
+			values (?,?,?,?,?,?,?)',
+		array(
+		 'issssibi',
+		 $this->_testId,
+		 $this->_type,
+		 $this->_text,
+		 $this->_answerTip,
+		 $this->_answer,
+		 $this->_points,
+		 $this->_enabled,
+		), false);
+
+		var_dump($res);
+		// $res = $this->_dbh->query('insert into TestQuestions (
+		// 	TestId,
+		// 	TestQuestionType,
+		// 	TestQuestionText,
+		// 	TestQuestionAnswerTip,
+		// 	TestQuestionAnswer,
+		// 	TestQuestionPoints,
+		// 	TestQuestionEnabled)
+		// 	values (
+		// 		"'.$this->_testId    .'",
+		// 		"'.$this->_type      .'",
+		// 		"'.$this->_text      .'",
+		// 		"'.$this->_answerTip .'",
+		// 		"'.$this->_answer    .'",
+		// 		"'.$this->_points    .'",
+		// 		"'.$this->_enabled   .'")');
 				
 		$this->_id = $this->_dbh->getInsertId();
+		var_dump($this->_id);exit;
 		return $this->_id;
 	}
 

@@ -36,7 +36,7 @@ class TestConfigController extends Controller
 		try
 		{
 			$tb = new TestBuilder($this->_test->id);
-			var_dump($tb);
+			// var_dump($tb);
 			if( !empty($this->_data['TestQuestionId']) )
 			{
 				die('edycja!');
@@ -45,7 +45,8 @@ class TestConfigController extends Controller
 			else
 			{
 				var_dump($this->_data);
-				$tb->addQuestion($this->_data);
+				$tb->editQuestion()
+				->addQuestion($this->_data);
 				die('nowe!');
 			}
 			$this->_tplMessages['info'][] = 'Modyfikacja zakończona sukcesem!';
@@ -70,7 +71,7 @@ class TestConfigController extends Controller
 		}
 		catch(Exception $e)
 		{
-			var_dump($e);exit;
+			// var_dump($e);exit;
 			$this->_tplMessages['error'][] = $e->getMessage();
 		}
 

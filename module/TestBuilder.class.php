@@ -3,6 +3,7 @@
 class TestBuilder
 {
 	private $_test;
+	private $_questionBuilder;
 
 	public function __construct( $testId = false )
 	{
@@ -20,17 +21,27 @@ class TestBuilder
 		return $this->_test;
 	}
 
-	public function addQuestion( array $data )
+	public function editQuestion()
 	{
-		$qb = new QuestionBuilder($this);
-		return $qb->addQuestion($data);
+		if( $this->_questionBuilder === NULL )
+		{
+			$this->_questionBuilder = new QuestionBuilder($this);
+		}
+
+		return $this->_questionBuilder;
 	}
 
-	public function modifyQuestion( array $data )
-	{
-		$qb = new QuestionBuilder($this);
-		return $qb->addQuestion($data);
-	}
+	// public function addQuestion( array $data )
+	// {
+	// 	$qb = new QuestionBuilder($this);
+	// 	return $qb->addQuestion($data);
+	// }
+
+	// public function modifyQuestion( array $data )
+	// {
+	// 	$qb = new QuestionBuilder($this);
+	// 	// return $qb->addQuestion($data);
+	// }
 }
 
 class QuestionBuilder
@@ -113,6 +124,55 @@ class QuestionBuilder
 	{
 		return $this->_testBuilder->getTest();
 	}
+}
+
+class QuestionClosedBuilder
+{
+	public function build( array $data )
+	{
+		if( empty($data['TestQuestionPoints']) )
+		{
+			throw new InvalidDataException('answer', 'Brak poprawnej odpowiedzi');
+		}
+
+		$question = new TestQuestionDal();
+
+		// $question->id      = $data['TestQuestionId'];
+		// $this->_testId  = $row['TestId'];
+		$question->type    = 'closed';
+		$question->text    = $data['TestQuestionText'];
+		$question->points  = $data['TestQuestionPoints'];
+		$question->enabled = true;
+
+		$answers = array();
+		$row_id = 0;
+		$corrent_answer = false;
+		foreach($data['TestQuestionAnswer'] as $k => $v)
+		{
+			if( !empty($v) )
+			{
+				$answers[$row_id] = $v;
+				if(isset($data['TestQuestionAnswerCheck'][$k]))
+				{
+					$corrent_answer = $row_id;
+				}
+				$row_id++;
+			}
+		}
+		$question->answer = json_encode(array(
+			'correct' => $corrent_answer,
+			'answers' => $answers,
+		));
+		// var_dump($question->answer);exit;
+
+		return $question;
+	}
+	
+}
+
+class QuestionClosed
+{
+	
 }
 
 class QuestionOpenBuilder

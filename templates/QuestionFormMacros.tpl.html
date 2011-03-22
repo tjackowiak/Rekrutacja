@@ -6,8 +6,8 @@
 	<label for="TestQuestionText">Pytanie <small>(widoczne dla zdającego test)</small></label>
 	<textarea tabindex="2" rows="5" name="TestQuestionText">${params/QuestionForm/text|nothing}</textarea><br/>
 
-	<label for="TestQuestionText">Dodatkowe informacje <small>(widoczne jedynie dla oceniającego test)</small></label>
-	<textarea tabindex="3" rows="5" name="TestQuestionText">${params/QuestionForm/text|nothing}</textarea><br/>
+	<label for="TestQuestionTextTip">Dodatkowe informacje <small>(widoczne jedynie dla oceniającego test)</small></label>
+	<textarea tabindex="3" rows="5" name="TestQuestionTextTip">${params/QuestionForm/text|nothing}</textarea><br/>
 </tal:block>
 
 <!-- Pytanie otwarte -->
@@ -49,7 +49,7 @@ question_closed_func = function() {
 		txt = $("#QuestionFormArea li textarea");
 		if(txt[txt.length-1].value!=="")
 		{
-			$('<li><input type="checkbox" name="TestQuestionAnswer[]" /><textarea />&nbsp;</li>')
+			$('<li><input type="checkbox" name="TestQuestionAnswerCheck['+txt.length+']" value="On" /><textarea name="TestQuestionAnswer[]"/>&nbsp;</li>')
 			.appendTo($("#QuestionFormArea ol"))
 			.hide().slideDown()
 			.children("textarea").keyup(arguments.callee);
@@ -64,10 +64,10 @@ question_closed_func = function() {
 <label for="TestQuestionAnswers">Odpowiedzi</label>
 	<ol name="TestQuestionAnswers">
 		<li>
-			<input type="checkbox" name="TestQuestionAnswer[]" /><textarea />&nbsp;
+			<input type="checkbox" name="TestQuestionAnswerCheck[0]" value="On" /><textarea name="TestQuestionAnswer[]"/>&nbsp;
 		</li>
 		<li>
-			<input type="checkbox" name="TestQuestionAnswer[]" /><textarea />&nbsp;
+			<input type="checkbox" name="TestQuestionAnswerCheck[1]" value="On" /><textarea name="TestQuestionAnswer[]"/>&nbsp;
 		</li>
 	</ol>
 </div>
