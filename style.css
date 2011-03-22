@@ -133,7 +133,7 @@ h1,h2, h3, h4, h5, h6 {
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
-		color: #BFBFBF;
+	color: #BFBFBF;
 	line-height:41px;
 }
 #menu li a, #menu li a:link, #menu li a:visited

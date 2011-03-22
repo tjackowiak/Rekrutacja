@@ -82,28 +82,18 @@ $(document).ready(function() {
 	var error_field="${params/TestDataError/field|nothing}";
 	var error_decription="${params/TestDataError/error|nothing}";
 
-
 	//
 	// Obsluga wyboru formularza wypenianie pytania
 	//
 	$("#TestQuestionType").change(questionTypeChange)
 	$("#TestQuestionType").val('closed').trigger('change');
 
-	function questionTypeChange()
-	{
-		// alert($("#TestQuestionType").val());
-		var type = $("#TestQuestionType").val()
-		$("#QuestionFormArea").slideUp(200, function(){
-			$(this).html($("#QuestionType_"+type).html()).slideDown(200);
-		});
-	}
-
 	//
 	// Obsluga podsiwetlania pola z bledem
 	//
 	if(errors > 0){
 		// Nie moge przekazac zwyklego stringa z powodu bledu PHPTala
-		// zamienia && na $amp;$amp;
+		// zamienia && na $amp;$amp; w całym kodzie JS
 		error_msg=document.createElement('span');
 		$(error_msg).text(error_decription).addClass('inline_error');
 		$("#TestQuestion"+error_field).after(error_msg).addClass('error_field dropshadow');
@@ -127,7 +117,23 @@ $(document).ready(function() {
 	$("h3.close").click(function() {
 		$("#QuestionForm").slideUp();
 	});
- });
+});
+
+//
+// Obsluga zmiany pol typowych wylacznie dla danego rodzaju pytania
+//
+function questionTypeChange()
+{
+	var type = $("#TestQuestionType").val()
+	$("#QuestionFormArea").slideUp(200, function(){
+		// rozwijamy block z polami dla danego typu
+		$(this).html($("#QuestionType_"+type).html()).slideDown(200);
+
+		// jesli dla tego typu jez zdefiniowana funckcja to ja odpalamy
+		if(typeof(window["question_"+type+"_func"]) === "function")
+			window["question_"+type+"_func"]();
+	});
+}
 </script>
 
 </tal:block>
