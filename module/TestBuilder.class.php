@@ -130,7 +130,7 @@ class QuestionClosedBuilder
 {
 	public function build( array $data )
 	{
-		if( empty($data['TestQuestionPoints']) )
+		if( empty($data['TestQuestionAnswerCheck']) )
 		{
 			throw new InvalidDataException('answer', 'Brak poprawnej odpowiedzi');
 		}
@@ -139,10 +139,11 @@ class QuestionClosedBuilder
 
 		// $question->id      = $data['TestQuestionId'];
 		// $this->_testId  = $row['TestId'];
-		$question->type    = 'closed';
-		$question->text    = $data['TestQuestionText'];
-		$question->points  = $data['TestQuestionPoints'];
-		$question->enabled = true;
+		$question->type       = 'closed';
+		$question->text       = $data['TestQuestionText'];
+		$question->points     = $data['TestQuestionPoints'];
+		$question->answerTip  = $data['TestQuestionAnswerTip'];
+		$question->enabled    = true;
 
 		$answers = array();
 		$row_id = 0;

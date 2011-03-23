@@ -51,7 +51,7 @@ class TestQuestionDal extends DBObject
 			TestQuestionEnabled)
 			values (?,?,?,?,?,?,?)',
 		array(
-		 'issssibi',
+		 'issssii',
 		 $this->_testId,
 		 $this->_type,
 		 $this->_text,
@@ -59,9 +59,9 @@ class TestQuestionDal extends DBObject
 		 $this->_answer,
 		 $this->_points,
 		 $this->_enabled,
-		), false);
+		), true);
 
-		var_dump($res);
+		// var_dump($res);
 		// $res = $this->_dbh->query('insert into TestQuestions (
 		// 	TestId,
 		// 	TestQuestionType,
@@ -80,7 +80,7 @@ class TestQuestionDal extends DBObject
 		// 		"'.$this->_enabled   .'")');
 				
 		$this->_id = $this->_dbh->getInsertId();
-		var_dump($this->_id);exit;
+		// var_dump($this->_id);exit;
 		return $this->_id;
 	}
 

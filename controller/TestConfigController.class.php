@@ -47,7 +47,7 @@ class TestConfigController extends Controller
 				var_dump($this->_data);
 				$tb->editQuestion()
 				->addQuestion($this->_data);
-				die('nowe!');
+				// die('nowe!');
 			}
 			$this->_tplMessages['info'][] = 'Modyfikacja zakończona sukcesem!';
 

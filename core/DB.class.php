@@ -7,11 +7,11 @@ class DB
 	 */
 	private static $instance = NULL;
 	private $host = 'localhost';
-	// private $db   = 'rekrutacja';
-	private $db   = 'recruitment';
+	private $db   = 'rekrutacja';
+	// private $db   = 'recruitment';
 	private $user = 'root';
-	// private $pass = 'root';
-	private $pass = '';
+	private $pass = 'root';
+	// private $pass = '';
 	private $dbh  = NULL;
 
 	public static function getInstance()

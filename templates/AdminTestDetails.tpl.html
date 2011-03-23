@@ -64,6 +64,10 @@ metal:use-macro="QuestionFormMacros.tpl.html/QuestionEditForm_${qType/shortName}
 
 	<h3>Pytnie</h3>
 	<pre>${question/text}</pre>
+<tal:block tal:condition="true:question/answerTip">
+	<h3>Podpowiedź</h3>
+	<pre>${question/answerTip}</pre>
+</tal:block>
 	<h3>Odpowiedzi</h3>
 	<pre>${question/answer}</pre>
 
