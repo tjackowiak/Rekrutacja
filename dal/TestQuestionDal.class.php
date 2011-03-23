@@ -14,13 +14,13 @@ class TestQuestionDal extends DBObject
 	{
 		$res = $this->_dbh->query('select * from TestQuestions where TestQuestionId = '.$this->_id);
 		$row = $res->fetch_assoc();
-		$this->_id        = $row['TestQuestionId'];
-		$this->_testId    = $row['TestId'];
+		$this->_id        = (int)$row['TestQuestionId'];
+		$this->_testId    = (int)$row['TestId'];
 		$this->_type      = $row['TestQuestionType'];
 		$this->_text      = $row['TestQuestionText'];
 		$this->_answerTip = $row['TestQuestionAnswerTip'];
 		$this->_answer    = $row['TestQuestionAnswer'];
-		$this->_points    = $row['TestQuestionPoints'];
+		$this->_points    = (int)$row['TestQuestionPoints'];
 		$this->_enabled   = $row['TestQuestionEnabled'];
 	}
 
@@ -61,26 +61,7 @@ class TestQuestionDal extends DBObject
 		 $this->_enabled,
 		), true);
 
-		// var_dump($res);
-		// $res = $this->_dbh->query('insert into TestQuestions (
-		// 	TestId,
-		// 	TestQuestionType,
-		// 	TestQuestionText,
-		// 	TestQuestionAnswerTip,
-		// 	TestQuestionAnswer,
-		// 	TestQuestionPoints,
-		// 	TestQuestionEnabled)
-		// 	values (
-		// 		"'.$this->_testId    .'",
-		// 		"'.$this->_type      .'",
-		// 		"'.$this->_text      .'",
-		// 		"'.$this->_answerTip .'",
-		// 		"'.$this->_answer    .'",
-		// 		"'.$this->_points    .'",
-		// 		"'.$this->_enabled   .'")');
-				
 		$this->_id = $this->_dbh->getInsertId();
-		// var_dump($this->_id);exit;
 		return $this->_id;
 	}
 

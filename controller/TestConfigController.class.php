@@ -26,7 +26,7 @@ class TestConfigController extends Controller
 
 	protected function showTestAction()
 	{
-		$tb  = new TestBuilder();
+		// $tb  = new TestBuilder();
 		$this->_tplParams['AvailableQuestionTypes'] = QuestionBuilder::getQuestionTypes();
 		$this->_tplParams['Test'] = $this->_test;
 	}
@@ -68,6 +68,8 @@ class TestConfigController extends Controller
 				'field' => ucfirst($e->fieldName),
 				'error' => $e->getMessage(),
 			);
+			// var_dump(__FILE__, __LINE__,$tb->editQuestion());exit;
+			$this->_tplParams['QuestionForm'] = $tb->editQuestion()->getQuestion();
 		}
 		catch(Exception $e)
 		{

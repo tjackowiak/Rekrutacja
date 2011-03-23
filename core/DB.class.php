@@ -7,11 +7,11 @@ class DB
 	 */
 	private static $instance = NULL;
 	private $host = 'localhost';
-	private $db   = 'rekrutacja';
-	// private $db   = 'recruitment';
+	// private $db   = 'rekrutacja';
+	private $db   = 'recruitment';
 	private $user = 'root';
-	private $pass = 'root';
-	// private $pass = '';
+	// private $pass = 'root';
+	private $pass = '';
 	private $dbh  = NULL;
 
 	public static function getInstance()
@@ -41,9 +41,10 @@ class DB
 
 	public function queryBinded( $sql, $params, $close )
 	{
-		var_dump('[DB Query] '.$sql);
+		// var_dump('[DB Query] '.$sql);
 
-		$stmt = $this->dbh->prepare($sql) or die ("Failed to prepared the statement!");
+		$stmt = $this->dbh->stmt_init();
+		$stmt->prepare($sql);
 
 		call_user_func_array(array($stmt, 'bind_param'), refValues($params));
 

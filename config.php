@@ -31,6 +31,11 @@ class Config
 		error_reporting(-1);
 		ini_set("display_errors", 1); 
 
+		// pozwala m.in. wykryc problemy z parsowaniem zapytania
+		// w czasie wywolywania mysqli->prepare()
+		mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
+
+
 		/**
 		 * Config
 		 */

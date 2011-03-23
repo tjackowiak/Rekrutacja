@@ -9,7 +9,7 @@
 		<div class="title">
 			<h2>${params/Test/name}</h2>
 			<div class="titlemeta">
-				<span class="info"> Pytań: ${params/Test/questionsCount|string:0} </span>
+				<span class="info"> Pytań: ${params/Test/getQuestionsCount} </span>
 				<span class="clock"> ${params/Test/duration} min. </span>
 				<span class="author"> Edytowany przez: kef </span>
 			</div> <!-- titlemeta -->
@@ -53,30 +53,13 @@ metal:use-macro="QuestionFormMacros.tpl.html/QuestionEditForm_${qType/shortName}
 
 <!-- Lista pytan -->
 <div id="QuestionList">
-<div class="contentboxwraper dropshadow" tal:repeat="question params/Test/getQuestionsList" id="Question${question/id}">
-<div class="contentbox">
-
-	<div class="titlemeta">
-		<span class="info"> Typ: ${question/type} </span>
-		<span class="info"> Punkty: ${question/points} </span>
-		<span class="author"> Edytowane przez: kef </span>
-	</div> <!-- titlemeta -->
-
-	<h3>Pytnie</h3>
-	<pre>${question/text}</pre>
-<tal:block tal:condition="true:question/answerTip">
-	<h3>Podpowiedź</h3>
-	<pre>${question/answerTip}</pre>
-</tal:block>
-	<h3>Odpowiedzi</h3>
-	<pre>${question/answer}</pre>
-
-	<div class="clear"></div>
-</div> <!-- contentbox -->
-</div> <!-- contentboxwraper -->
-
-
+<tal:block
+tal:repeat="question params/Test/getQuestionsList"
+id="Question${question/id}"
+metal:use-macro="QuestionDetailsMacros.tpl.html/QuestionDetails"
+/>
 </div>
+
 
 
 <script>

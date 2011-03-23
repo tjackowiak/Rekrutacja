@@ -1,34 +1,42 @@
-<!-- Formatki do edycji pytan -->
+<!-- 
+Blok glowny formularza edycji pytan
+-->
 <tal:block metal:define-macro="QuestionEditForm">
 	<label for="TestQuestionPoints">Punkty <small>(wymagane)</small></label>
-	<input type="text" tabindex="1" id="TestQuestionPoints" name="TestQuestionPoints" value="${params/QuestionForm/points|nothing}"/>
+	<input type="text" tabindex="1" id="TestQuestionPoints" name="TestQuestionPoints" value="${params/QuestionForm/getPoints|nothing}"/>
 
 	<label for="TestQuestionText">Pytanie <small>(widoczne dla zdającego test)</small></label>
-	<textarea tabindex="2" rows="5" name="TestQuestionText">${params/QuestionForm/text|nothing}</textarea><br/>
+	<textarea tabindex="2" rows="5" name="TestQuestionText">${params/QuestionForm/getText|nothing}</textarea><br/>
 
 	<label for="TestQuestionAnswerTip">Dodatkowe informacje <small>(widoczne jedynie dla oceniającego test)</small></label>
-	<textarea tabindex="3" rows="5" name="TestQuestionAnswerTip">${params/QuestionForm/text|nothing}</textarea><br/>
+	<textarea tabindex="3" rows="5" name="TestQuestionAnswerTip">${params/QuestionForm/getAnswerTip|nothing}</textarea><br/>
 </tal:block>
 
-<!-- Pytanie otwarte -->
+
+<!--
+Pytanie otwarte - dedykowane pola
+-->
 <tal:block metal:define-macro="QuestionEditForm_open">
 <div id="QuestionType_open" style="display:none">
 
-	<label for="TestQuestionAnswers">Odpowiedź</label>
-	<textarea tabindex="3" rows="5" name="TestQuestionAnswers">${params/QuestionForm/answers|nothing}</textarea><br/>
+	<label for="TestQuestionAnswer">Odpowiedź <small>(zawartość pola pojawi się jako początkowa odpowiedź w teście)</small></label>
+	<textarea tabindex="3" rows="5" name="TestQuestionAnswer">${params/QuestionForm/answers|nothing}</textarea><br/>
 </div>
 </tal:block>
 
-<!-- Pytanie zamknięte -->
+
+<!--
+Pytanie zamkniete - dedykowane pola
+-->
 <tal:block metal:define-macro="QuestionEditForm_closed">
 <style>
-ol{
+#QuestionFormArea ol{
 	list-style-type: upper-latin;
 /*	line-height:125%;*/
 	font-weight: bold;
 	font-size:2em;
 }
-li{
+#QuestionFormArea li{
 	margin: 5px 0 0 50px;
 	/*line-height: 200px;*/
 }
@@ -62,7 +70,7 @@ question_closed_func = function() {
 
 <div id="QuestionType_closed" style="display:none">
 <label for="TestQuestionAnswers">Odpowiedzi</label>
-	<ol name="TestQuestionAnswers">
+	<ol name="TestQuestionAnswers" tal:condition="not:exists:params/QuestionForm" >
 		<li>
 			<input type="checkbox" name="TestQuestionAnswerCheck[0]" value="On" /><textarea name="TestQuestionAnswer[]"/>&nbsp;
 		</li>
@@ -70,5 +78,15 @@ question_closed_func = function() {
 			<input type="checkbox" name="TestQuestionAnswerCheck[1]" value="On" /><textarea name="TestQuestionAnswer[]"/>&nbsp;
 		</li>
 	</ol>
+
+	<ol name="TestQuestionAnswers"
+	tal:comment="Jesli wystapil blad w czasie wypelniania formularza
+		wypelniamy odpowiedzi zgodnie z tym co podal user"
+	tal:condition="exists:params/QuestionForm/getAnswers" >
+		<li tal:repeat="answer params/QuestionForm/getAnswers">
+			<input type="checkbox" name="TestQuestionAnswerCheck[${repeat/answer/index}]" value="On" /><textarea name="TestQuestionAnswer[]">${answer}</textarea>&nbsp;
+		</li>
+	</ol>
+
 </div>
 </tal:block>

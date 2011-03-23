@@ -15,7 +15,7 @@
 			<h2><a href="${link:'TestConfig','show',['testId'=>test.id]}">${test/name}</a></h2>
 			<a href="${link:this,'edit',['id'=>test.id]}#EditForm" class="action"><div> Edytuj </div></a>
 			<div class="titlemeta">
-				<span class="info"> Pytań: ${test/questionsCount|string:0} </span>
+				<span class="info"> Pytań: ${test/getQuestionsCount} </span>
 				<span class="clock"> ${test/duration} min. </span>
 				<span class="author"> Edytowany przez: kef </span>
 			</div> <!-- titlemeta -->
@@ -47,7 +47,7 @@
 	<textarea tabindex="3" rows="5" name="TestDescription">${params/TestData/description|nothing}</textarea><br/>
 	<!-- <input type="submit" value="Submit" tabindex="5" id="commentSubmit" name="submit"/> -->
 	</form>
-	<a href="#" class="action" id="add_or_edit"><div> Dodaj nowy </div></a>
+	<a href="#" class="action" id="add_or_edit"><div> Dodaj test </div></a>
 	<div class="clear"></div>
 </div>
 </div>

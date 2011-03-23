@@ -138,3 +138,14 @@ function phptal_tales_link( $src, $nothrow )
 
 	return $return;
 }
+
+
+function phptal_tales_ifeq($src, $nothrow)
+{
+    $src = explode(',', $src);
+    $onTrue  = empty($src[2]) ? 'true' : phptal_tales(trim($src[2]), $nothrow);
+    $onFalse = empty($src[3]) ? 'null' : phptal_tales(trim($src[3]), $nothrow);
+    return '('
+        . phptal_tales(trim($src[0]), $nothrow) . '===' . phptal_tales(trim($src[1]), $nothrow)
+        . ' ? ' . $onTrue . ' : ' . $onFalse . ')';
+}

@@ -1,0 +1,72 @@
+<!--
+Glowny blok z opisem pytania
+Laduje podrzedne bloki z polami roznymi w zaleznosci od typu
+ -->
+<tal:block metal:define-macro="QuestionDetails">
+<style>
+#QuestionList h2{
+	font-family: Georgia,Arial,century gothic,verdana,sans-serif;
+	margin: 5px 0 15px 0;
+	color: #222222;
+
+}
+#QuestionList ol{
+	padding: 0 0 0 40px;
+}
+#QuestionList li.correct pre{
+	border: 1px solid green;
+	background-color: #66DD66;
+}
+</style>
+
+
+<div class="contentboxwraper dropshadow" id="Question${question/getId}">
+<div class="contentbox">
+
+	<div class="titlemeta">
+		<span class="info"> Typ: ${question/getType} </span>
+		<span class="info"> Punkty: ${question/getPoints} </span>
+		<span class="author"> Edytowane przez: kef </span>
+	</div> <!-- titlemeta -->
+
+	<h4>Pytanie</h4>
+	<pre>${question/getText}</pre>
+<tal:block tal:condition="true:question/getAnswerTip">
+	<h4>Podpowiedź</h4>
+	<pre>${question/getAnswerTip}</pre>
+</tal:block>
+
+<tal:block metal:use-macro="QuestionDetails_${question/getType}" />
+
+	<div class="clear"></div>
+</div> <!-- contentbox -->
+</div> <!-- contentboxwraper -->
+
+</tal:block>
+
+
+<!--
+Pytanie otwarte
+-->
+<tal:block metal:define-macro="QuestionDetails_open">
+	<h3>Odpowiedzi</h3>
+	<pre>${question/getAnswer}</pre>
+</tal:block>
+
+
+<!--
+Pytanie zamkniete (A,B,C)
+-->
+<tal:block metal:define-macro="QuestionDetails_closed"
+tal:define="answers question/getAnswers">
+	<h4>Odpowiedzi</h4>
+
+	<ol>
+		<li
+		tal:repeat="answer answers"
+		tal:attributes="class php:question.isCorrectAnswer(repeat.answer.index) ? 'correct' : NULL">
+			<pre>${answer}</pre>
+		</li>
+	</ol>
+</tal:block>
+
